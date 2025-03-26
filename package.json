@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.0.14",
+        "pdfjs-dist": "^4.10.38",
         "tailwindcss": "^4.0.14"
     }
 }

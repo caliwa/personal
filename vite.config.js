@@ -10,6 +10,9 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    watch: {
+        include: ["resources/**"],
+    },
     server: {
         host: 'personal.test',
         watch: {

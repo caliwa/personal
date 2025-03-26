@@ -38,7 +38,7 @@
         <!-- Preload critical resources -->
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"></noscript>
-    
+        @livewireStyles
     <!-- CSS -->
     @vite('resources/css/app.css')
     <style>
@@ -115,8 +115,6 @@
       ]
     }
     </script>
-    
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-white overflow-x-hidden" x-data="{ 
     mobileMenuOpen: false,
@@ -182,6 +180,7 @@
             {{-- <a href="#about" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">About</a> --}}
             <a wire:navigate href="/galeria" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Proyectos</a>
             <a wire:navigate href="/contactanos" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Contáctenos</a>
+            <a href="/prueba" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Ejemplo</a>
         </div>
         <div class="md:hidden">
             <button 
@@ -242,5 +241,6 @@
             </div>
         </div>
     </footer>
+    @livewireScripts
 </body>
 </html>
