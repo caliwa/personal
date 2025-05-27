@@ -238,7 +238,7 @@
                 <button id="clearCanvas" class="btn"><i class="fas fa-eraser"></i></button>
                 <button id="undoBtn" class="btn"><i class="fas fa-undo"></i></button>
                 <button id="downloadPdf" class="btn">
-                    <i class="fas fa-download"></i> Guardar cambios y Enviar a Caja
+                    <i class="fas fa-download"></i>Guardar PDF
                 </button>
             </div>
             <div class="page-info">
@@ -1543,7 +1543,7 @@ clearCanvasBtn.addEventListener('click', () => {
         console.error('Error downloading PDF:', error);
     } finally {
         downloadBtn.disabled = false;
-        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Guardar cambios y Enviar a Caja';
+        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Guardar PDF';
     }
 });
 

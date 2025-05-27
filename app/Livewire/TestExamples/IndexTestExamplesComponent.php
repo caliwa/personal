@@ -178,68 +178,10 @@ class IndexTestExamplesComponent extends Component
             
             // Clean up original PDF file
             unlink($originalPdf);
-
-   
             return response()->download($finalPdf, 'annotated_document.pdf', [
                 'Content-Type' => 'application/pdf'
-            ]);
-            
-
-            try {
-                // Read the final PDF content
-                $finalPdfContent = file_get_contents($finalPdf);
-                
-                // Generate a unique filename for SFTP
-                $sftpFilename = 'test_' . $timestamp . '.pdf';
-                
-                // Upload to SFTP in the specified directory
-                // Storage::disk('sftp')->put(
-                //     'pdf_cotizacion_mod/' . $sftpFilename, 
-                //     $finalPdfContent
-                // );
-
-                //LLENAR TABLA
-                // INSERT INTO dbo.ct_adjuntos_pdf_modficados (
-                //     ka_nl_adjunto integer identity,
-                //     ka_nl_movimiento integer not null,
-                //     ka_nl_vendedor integer not null,
-                //     ddt_fecha_new datetime not null,
-                //     ss_ruta_pdf_modificado varchar(max) not null,
-                //     primary key(ka_nl_adjunto)
-                //     )
-
-                // Prepare the payload for the external API
-                
-                $url = 'https://rdpd.sagerp.co:59643/aplicativoDoblamosPruebas/api/ProduccionOrdenesVenta/CreateProductionOrderForCheckout';
-                try {
-                    $response = Http::post($url, [
-                        'DocEntry' => $this->DocEntry,
-                        'DocumentName' => $sftpFilename
-                    ]);
-            
-                    if ($response->successful() && $response->json('Header')['Success']) {
-                        $orders = $response->json('Data');
-                        dd($orders);
-                    } else {
-                        $errorMessage = $response->json('Header')['Message'] ?? 'An error occurred';
-                        dd($errorMessage);
-                    }
-                } catch (\Exception $e) {
-                    return response()->json(['error' => $e->getMessage()], 500);
-                }
-
-
-                $this->js('window.close();');
-
-                //LUEGO CONSUMIR API HUGO (pedir DocEntry)
-
-                
-            } catch (FilesystemException $e) {
-                // If SFTP upload fails, still try to send the file to user but log the error
-                Log::error('SFTP upload failed: ' . $e->getMessage());
-                
-     
-            }
+            ])->deleteFileAfterSend(true);
+            //return $this->redirect('/landing', navigate: true);
             
             // Stream the file for download
             // return response()->download($finalPdf, 'annotated_document.pdf', [
@@ -251,6 +193,10 @@ class IndexTestExamplesComponent extends Component
                 'error' => $e->getMessage()
             ], 500);
         }
+    }
+
+    private function downloadPDF($finalPdf){
+
     }
 
     public function render()

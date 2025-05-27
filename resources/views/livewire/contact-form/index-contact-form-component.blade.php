@@ -1,5 +1,4 @@
-@assets
-<head>
+@assets<head>
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
@@ -66,235 +65,37 @@
             from, to { opacity: 1; }
             50% { opacity: 0; }
         }
-        
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
-        }
-        
-        .form-control {
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:hover {
-            transform: translateY(-2px);
-        }
     </style>
 </head>
 @endassets
-<div x-data="{
-    formData: {
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        birthdate: '',
-        gender: '',
-        comments: '',
-        interests: []
-    },
-    errors: {},
-    formSubmitted: false,
-    
-    validateForm() {
-        this.errors = {};
-        let valid = true;
-        
-        if (!this.formData.name) {
-            this.errors.name = 'Name is required';
-            valid = false;
-        }
-        
-        if (!this.formData.email) {
-            this.errors.email = 'Email is required';
-            valid = false;
-        } else if (!/^\S+@\S+\.\S+$/.test(this.formData.email)) {
-            this.errors.email = 'Email is invalid';
-            valid = false;
-        }
-        
-        return valid;
-    },
-    
-    submitForm() {
-        if (this.validateForm()) {
-            // Here you would typically send the data to a server
-            console.log('Form submitted:', this.formData);
-            this.formSubmitted = true;
-        }
-    }
-}">
 
-    <!-- Success Message -->
-    <section 
-        x-show="formSubmitted" 
-        x-transition:enter="transition ease-out duration-500"
-        x-transition:enter-start="opacity-0 transform scale-95"
-        x-transition:enter-end="opacity-100 transform scale-100"
-        class="py-16 md:py-24 px-6 md:px-12 border-b-4 border-black bg-[#06D6A0]"
-    >
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-block w-24 h-24 bg-white border-4 border-black mb-8 relative animate-pulse-slow">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                THANK YOU!
-            </h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Your information has been submitted successfully.
-            </p>
-            <a 
-                href="#" 
-                class="inline-block px-8 py-4 bg-black text-white border-4 border-black font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]"
-            >
-                BACK TO HOME
-            </a>
+<div x-data="{}" class="py-16 md:py-24 px-6 md:px-12 bg-gradient-to-br from-[#25D366] to-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block w-24 h-24 bg-white border-4 border-black mb-8 relative animate-pulse-slow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="#25D366">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
         </div>
-    </section>
-
-    <!-- Data Capture Form -->
-    <section class="py-16 md:py-24 px-6 md:px-12" x-show="!formSubmitted">
-        <div class="max-w-4xl mx-auto">
-            <form 
-                id="data-form" 
-                @submit.prevent="submitForm()" 
-                class="border-4 border-black p-8 bg-white"
-            >
-                <h2 class="text-2xl md:text-3xl font-bold mb-8 border-b-4 border-black pb-4">Personal Information</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <label class="block font-bold mb-2">Full Name *</label>
-                        <input 
-                            type="text" 
-                            x-model="formData.name" 
-                            class="w-full px-4 py-3 border-4 border-black form-control"
-                            :class="{'border-red-500': errors.name}"
-                            placeholder="John Doe"
-                        >
-                        <p x-show="errors.name" x-text="errors.name" class="text-red-500 mt-1"></p>
-                    </div>
-                    
-                    <div>
-                        <label class="block font-bold mb-2">Email Address *</label>
-                        <input 
-                            type="email" 
-                            x-model="formData.email" 
-                            class="w-full px-4 py-3 border-4 border-black form-control"
-                            :class="{'border-red-500': errors.email}"
-                            placeholder="example@domain.com"
-                        >
-                        <p x-show="errors.email" x-text="errors.email" class="text-red-500 mt-1"></p>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <label class="block font-bold mb-2">Phone Number</label>
-                        <input 
-                            type="tel" 
-                            x-model="formData.phone" 
-                            class="w-full px-4 py-3 border-4 border-black form-control"
-                            placeholder="(123) 456-7890"
-                        >
-                    </div>
-                    
-                    <div>
-                        <label class="block font-bold mb-2">Date of Birth</label>
-                        <input 
-                            type="date" 
-                            x-model="formData.birthdate" 
-                            class="w-full px-4 py-3 border-4 border-black form-control"
-                        >
-                    </div>
-                </div>
-                
-                <div class="mb-8">
-                    <label class="block font-bold mb-2">Address</label>
-                    <input 
-                        type="text" 
-                        x-model="formData.address" 
-                        class="w-full px-4 py-3 border-4 border-black form-control"
-                        placeholder="123 Main St, City, Country"
-                    >
-                </div>
-                
-                <div class="mb-8">
-                    <label class="block font-bold mb-2">Gender</label>
-                    <div class="flex flex-wrap gap-4">
-                        <label class="inline-flex items-center">
-                            <input type="radio" x-model="formData.gender" value="male" class="form-radio border-2 border-black h-5 w-5">
-                            <span class="ml-2">Male</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="radio" x-model="formData.gender" value="female" class="form-radio border-2 border-black h-5 w-5">
-                            <span class="ml-2">Female</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="radio" x-model="formData.gender" value="other" class="form-radio border-2 border-black h-5 w-5">
-                            <span class="ml-2">Other</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="radio" x-model="formData.gender" value="prefer-not-to-say" class="form-radio border-2 border-black h-5 w-5">
-                            <span class="ml-2">Prefer not to say</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="mb-8">
-                    <label class="block font-bold mb-2">Interests (Select all that apply)</label>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" x-model="formData.interests" value="technology" class="form-checkbox border-2 border-black h-5 w-5">
-                            <span class="ml-2">Technology</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" x-model="formData.interests" value="sports" class="form-checkbox border-2 border-black h-5 w-5">
-                            <span class="ml-2">Sports</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" x-model="formData.interests" value="music" class="form-checkbox border-2 border-black h-5 w-5">
-                            <span class="ml-2">Music</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" x-model="formData.interests" value="travel" class="form-checkbox border-2 border-black h-5 w-5">
-                            <span class="ml-2">Travel</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" x-model="formData.interests" value="reading" class="form-checkbox border-2 border-black h-5 w-5">
-                            <span class="ml-2">Reading</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" x-model="formData.interests" value="cooking" class="form-checkbox border-2 border-black h-5 w-5">
-                            <span class="ml-2">Cooking</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="mb-8">
-                    <label class="block font-bold mb-2">Additional Comments</label>
-                    <textarea 
-                        x-model="formData.comments" 
-                        rows="4" 
-                        class="w-full px-4 py-3 border-4 border-black form-control"
-                        placeholder="Any additional information you'd like to share..."
-                    ></textarea>
-                </div>
-                
-                <div class="flex justify-between items-center">
-                    <div class="text-sm text-gray-600">
-                        * Required fields
-                    </div>
-                    <button 
-                        type="submit" 
-                        class="px-8 py-4 bg-[#06D6A0] text-white border-4 border-black font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]"
-                    >
-                        SUBMIT FORM
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-slide-in">
+            RUBICON
+        </h1>
+        <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto animate-fade-in">
+            "La creatividad es la inteligencia divirtiéndose." – Albert Einstein
+        </p>
+        <p class="text-lg mb-8 animate-fade-in">
+            Resido en Medellín, Colombia - Ingeniero Informático
+        </p>
+        <p class="text-lg mb-8 animate-fade-in">
+            Contáctame: 
+            <a href="https://wa.me/+573234542749?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto." class="underline hover:text-blue-600">
+                +57 323 454 2749
+            </a> 
+        </p>
+       <a 
+            href="https://wa.me/+573234542749?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto." 
+            class="inline-block px-8 py-4 bg-[#25D366] text-white border-4 border-black font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] animate-slide-in"
+        >
+            CONTÁCTAME POR WHATSAPP
+        </a>
+    </div>
 </div>

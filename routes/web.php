@@ -12,10 +12,10 @@ Route::get('/', function () {
     return redirect('/landing');
 });
 
-Route::get('/landing', MediatorDashboardComponent::class)->name('dashboard');
+//Route::get('/landing', MediatorDashboardComponent::class)->name('dashboard');
 
-Route::get('/galeria', MediatorGalleyComponent::class)->name('gallery');
+Route::get('/landing', MediatorGalleyComponent::class)->name('dashboard');
 
 Route::get('/contactanos', MediatorContactFormComponent::class)->name('contactform');
 
-Route::get('/prueba', MediatorTestExamplesComponent::class)->name('testexamples');
+Route::get('/demo', MediatorTestExamplesComponent::class)->name('testexamples');

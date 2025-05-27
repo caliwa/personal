@@ -14,20 +14,20 @@
         
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://rubicon-solutions.com/">
+        <meta property="og:url" content="https://rubicon-prog.com/">
         <meta property="og:title" content="Rubicon | Soluciones Empresariales para Automatización y Eficiencia">
         <meta property="og:description" content="Expertos en consolidación de flujos de caja, gestión de inventarios y automatización de procesos para medianas y grandes empresas.">
-        <meta property="og:image" content="https://rubicon-solutions.com/images/og-image.jpg">
+        <meta property="og:image" content="https://rubicon-prog.com/images/og-image.jpg">
         
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://rubicon-solutions.com/">
+        <meta property="twitter:url" content="https://rubicon-prog.com/">
         <meta property="twitter:title" content="Rubicon | Transformación Digital para Empresas">
         <meta property="twitter:description" content="Soluciones tecnológicas para optimizar procesos empresariales, flujos de caja y gestión de inventarios con sistemas QR y automatización.">
-        <meta property="twitter:image" content="https://rubicon-solutions.com/images/og-image.jpg">
+        <meta property="twitter:image" content="https://rubicon-prog.com/images/og-image.jpg">
         
         <!-- Canonical URL -->
-        <link rel="canonical" href="https://rubicon-solutions.com/">
+        <link rel="canonical" href="https://rubicon-prog.com/">
 
         <meta name="theme-color" content="#000000">
         
@@ -171,29 +171,27 @@
     }
 }">
     <!-- Navigation -->
-    <nav class="border-b-4 border-black py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 bg-white z-50">
-        <div class="font-bold text-2xl tracking-tight">
-            <span x-text="typewriterText"></span><span class="cursor"></span>
-        </div>
-        <div class="hidden md:flex space-x-8">
-            <a wire:navigate href="/landing" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Inicio</a>
-            {{-- <a href="#about" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">About</a> --}}
-            <a wire:navigate href="/galeria" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Proyectos</a>
-            <a wire:navigate href="/contactanos" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Contáctenos</a>
-            <a href="/prueba" class="font-medium hover:underline decoration-4 underline-offset-8 transition-all duration-300">Ejemplo</a>
-        </div>
-        <div class="md:hidden">
-            <button 
-                @click="mobileMenuOpen = !mobileMenuOpen" 
-                class="p-2 border-2 border-black hover:bg-black hover:text-white transition-colors duration-300"
-                aria-label="Toggle menu"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-    </nav>
+    <nav class="border-b-4 border-red-300/50 py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 bg-white/20 backdrop-blur-md shadow-lg shadow-red-200/20 z-50">
+            <div class="font-bold text-2xl tracking-tight text-black">
+                <span x-text="typewriterText"></span><span class="cursor text-black">|</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/landing" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Inicio</a>
+                <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Contáctenos</a>
+                <a wire:current='decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Demo</a>
+            </div>
+            <div class="md:hidden">
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen" 
+                    class="p-2 border-2 border-red-400 text-red-700 hover:bg-red-400 hover:text-white transition-colors duration-300 rounded backdrop-blur-sm"
+                    aria-label="Toggle menu"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
 
     <!-- Mobile Menu -->
     <div 
@@ -208,10 +206,9 @@
         aria-hidden="true"
     >
         <div class="flex flex-col py-4 px-6">
-            <a href="#" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Home</a>
-            <a href="#about" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">About</a>
-            <a href="#projects" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Projects</a>
-            <a href="#contact" class="font-medium py-3 hover:bg-gray-100 px-2">Contact</a>
+            <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/landing" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Inicio</a>
+            <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Contáctenos</a>
+            <a wire:current='decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Demo</a>
         </div>
     </div>
 
@@ -223,20 +220,16 @@
     <footer class="py-12 px-6 md:px-12">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-4 border-black pb-8 mb-8">
-                <div class="font-bold text-3xl tracking-tight mb-6 md:mb-0">RUBICON</div>
-                <div class="flex flex-col md:flex-row gap-6 md:gap-12">
-                    <a href="#" class="font-medium hover:underline decoration-2 underline-offset-4 transition-all duration-300">Home</a>
-                    <a href="#about" class="font-medium hover:underline decoration-2 underline-offset-4 transition-all duration-300">About</a>
-                    <a href="#projects" class="font-medium hover:underline decoration-2 underline-offset-4 transition-all duration-300">Projects</a>
-                    <a href="#contact" class="font-medium hover:underline decoration-2 underline-offset-4 transition-all duration-300">Contact</a>
-                </div>
+                <div class="font-bold text-3xl tracking-tight mb-6 md:mb-0 text-black">RUBICON</div>
+                <!-- <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+                    <a href="#contact" class="font-medium hover:underline decoration-2 underline-offset-4 transition-all duration-300">Contacto</a>
+                </div>-->
             </div>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <p>© {{ date('Y') }} Rubicon. All rights reserved.</p>
+                <p>© {{ date('Y') }} Rubicon. Todos los derechos reservados.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="https://twitter.com/rubicon" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Twitter profile">Twitter</a>
-                    <a href="https://instagram.com/rubicon" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Instagram profile">Instagram</a>
-                    <a href="https://dribbble.com/rubicon" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Dribbble profile">Dribbble</a>
+                    <a href="https://www.tiktok.com/@rubicon.tech" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Tiktok profile">Tiktok</a>
+                    <a href="https://instagram.com/rubicon.bio" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Instagram profile">Instagram</a>
                 </div>
             </div>
         </div>

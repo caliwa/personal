@@ -117,34 +117,43 @@ x-on:keydown.escape="closeModal"
 x-on:scroll.window="!showModal || closeModal()"
 >
     <!-- Hero Section -->
-    <section class="relative py-24 px-6 md:px-12 border-b-4 border-black bg-[#073B4C] text-white overflow-hidden">
-        <!-- Efecto de fondo dinámico -->
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-        </div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-                <span class="block animate-slide-in" style="animation-delay: 0.1s">SHOWCASE</span>
-                <span class="block text-[#FF5252] animate-slide-in" style="animation-delay: 0.3s">GALLERY</span>
-            </h1>
-            <div class="flex flex-col md:flex-row gap-8 items-end">
-                <div class="md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
-                    <p class="text-xl md:text-2xl mb-8">
-                        Una exhibición en movimiento perpetuo de nuestros proyectos más icónicos. 
-                        Cada obra cuenta una historia de innovación brutalista.
-                    </p>
-                </div>
-                <div class="md:w-1/3 h-32 bg-[#FFD166] border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float"></div>
+<!-- Hero Section -->
+<section class="relative py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b-4 border-black bg-[#0d0c0a] text-white overflow-hidden">
+    <!-- Efecto de fondo dinámico -->
+
+    <div class="max-w-6xl mx-auto relative z-10">
+        <!-- Contenedor principal para el título y el fondo -->
+        <div class="flex flex-col lg:flex-row">
+            <!-- Título a la izquierda -->
+            <div class="w-full lg:w-1/2 h-full">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
+                    <span class="block animate-slide-in" style="animation-delay: 0.1s">EXHIBICIÓN</span>
+                    <span class="block text-[#FF5252] animate-slide-in" style="animation-delay: 0.3s">PORTAFOLIO</span>
+                </h1>
+            </div>
+            
+            <!-- Logo a la derecha -->
+            <div class="w-full lg:w-1/2 h-full flex justify-center lg:ml-[210px] items-center mt-8">
+                <img src="{{ asset('img/RUBICONLOGO.png') }}" alt="Rubicon Logo" 
+                     class="w-48 sm:w-56 md:w-64 animate-slide-in">
             </div>
         </div>
-    </section>
-
-    <!-- Infinite Horizontal Gallery -->
-    <section class="relative py-12 border-b-4 border-black bg-white overflow-hidden group">
-        <!-- Flechas de navegación (estilo brutalista) -->
         
-        <!-- Contenedor principal de la galería -->
+        <!-- Contenido abajo -->
+        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
+            <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
+                    Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.
+                </p>
+            </div>
+            <div class="w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- Infinite Horizontal Gallery 
+    <section class="relative py-12 border-b-4 border-black bg-white overflow-hidden group">
+        
         <div 
             x-ref="infiniteGallery"
             class="overflow-x-hidden py-8 scrollbar-hide"
@@ -154,16 +163,13 @@ x-on:scroll.window="!showModal || closeModal()"
                 x-ref="galleryContent"
                 class="flex space-x-8 items-stretch"
             >
-                <!-- Items de proyecto -->
                 <template x-for="project in projects" :key="project.id">
                     <div 
                         class="flex-shrink-0 w-96 h-[28rem] border-4 border-black bg-white overflow-hidden relative transform transition-all duration-500 hover:scale-[1.02] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] cursor-pointer group/item"
                         @click="openModal(project)"
                     >
-                        <!-- Efecto de superposición -->
                         <div class="absolute inset-0 bg-black opacity-0 group-hover/item:opacity-20 transition-opacity duration-300 z-10"></div>
                         
-                        <!-- Imagen del proyecto -->
                         <div class="relative h-2/3 overflow-hidden">
                             <img 
                                 :src="project.image" 
@@ -183,12 +189,12 @@ x-on:scroll.window="!showModal || closeModal()"
                             </div>
                         </div>
                         
-                        <!-- Contenido textual -->
+
                         <div class="p-6 h-1/3 flex flex-col">
                             <h3 class="text-2xl font-bold mb-2" x-text="project.title"></h3>
                             <p class="text-sm mb-4 line-clamp-2" x-text="project.description"></p>
                             <div class="mt-auto font-bold text-xs underline decoration-2 underline-offset-4 group-hover/item:text-[#FF5252] transition-colors">
-                                VIEW PROJECT →
+                                VER PROYECTO →
                             </div>
                         </div>
                     </div>
@@ -196,10 +202,10 @@ x-on:scroll.window="!showModal || closeModal()"
             </div>
         </div>
         
-        <!-- Efecto de gradiente en los bordes -->
         <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
     </section>
+    -->
 
     <!-- Project Modal -->
     <div 
@@ -265,27 +271,27 @@ x-on:scroll.window="!showModal || closeModal()"
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="md:col-span-2">
-                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">Project Vision</h3>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">Visión del Proyecto</h3>
                         <p class="mb-6 text-lg leading-relaxed" x-text="currentProject?.description"></p>
                         <div class="bg-gray-100 border-2 border-black p-6">
-                            <h4 class="font-bold mb-2">Challenge</h4>
-                            <p>Creating a distinctive identity that combines brutalist aesthetics with functional elegance, while meeting all client requirements for usability and brand recognition.</p>
+                            <h4 class="font-bold mb-2">Reto</h4>
+                            <p>Crear una identidad distintiva que combine la estética brutalista con la elegancia funcional, cumpliendo todos los requisitos del cliente en cuanto a usabilidad y reconocimiento de marca.</p>
                         </div>
                     </div>
                     <div class="border-4 border-black p-6 bg-gray-50">
-                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">Key Details</h3>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">Detalles Clave</h3>
                         <div class="space-y-6">
                             <div>
-                                <div class="font-bold uppercase text-sm tracking-widest">Client</div>
+                                <div class="font-bold uppercase text-sm tracking-widest">Cliente</div>
                                 <div class="text-lg" x-text="currentProject?.client"></div>
                             </div>
                             <div>
-                                <div class="font-bold uppercase text-sm tracking-widest">Scope</div>
-                                <div class="text-lg">Full design & development</div>
+                                <div class="font-bold uppercase text-sm tracking-widest">Alcance</div>
+                                <div class="text-lg">Diseño y desarrollo completo</div>
                             </div>
                             <div>
-                                <div class="font-bold uppercase text-sm tracking-widest">Duration</div>
-                                <div class="text-lg">6-9 months</div>
+                                <div class="font-bold uppercase text-sm tracking-widest">Duración</div>
+                                <div class="text-lg">6-9 meses</div>
                             </div>
                         </div>
                     </div>
@@ -293,7 +299,7 @@ x-on:scroll.window="!showModal || closeModal()"
                 
                 <!-- Galería secundaria -->
                 <div class="mb-12">
-                    <h3 class="text-xl font-bold mb-6 border-b-2 border-black pb-2">Project Gallery</h3>
+                    <h3 class="text-xl font-bold mb-6 border-b-2 border-black pb-2">Galería del Proyecto</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <template x-for="i in 4" :key="i">
                             <div class="border-2 border-black overflow-hidden h-40 md:h-56">
@@ -316,13 +322,13 @@ x-on:scroll.window="!showModal || closeModal()"
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
                         </svg>
-                        CLOSE
+                        CERRAR
                     </button>
                     <a 
                         href="#contact" 
                         class="px-8 py-3 border-4 border-black font-bold bg-black text-white hover:bg-[#FF5252] transition-all duration-300 flex items-center gap-2"
                     >
-                        START YOUR PROJECT
+                        INICIAR TU PROYECTO
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
@@ -332,28 +338,67 @@ x-on:scroll.window="!showModal || closeModal()"
         </div>
     </div>
 
+    <section class="py-16 md:py-24 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                @foreach([
+                    ['count' => 140, 'label' => 'PROYECTOS COMPLETADOS'],
+                    ['count' => 15, 'label' => 'CLIENTES SATISFECHOS'],
+                    ['count' => 5, 'label' => 'AÑOS DE EXPERIENCIA']
+                ] as $index => $counter)
+                <div 
+                    class="scroll-animate opacity-0 translate-y-10 transition-all duration-700"
+                    style="transition-delay: {{ $index * 200 }}ms"
+                    x-data="{ 
+                        count: 0, 
+                        target: {{ $counter['count'] }},
+                        init() {
+                            const observer = new IntersectionObserver((entries) => {
+                                if (entries[0].isIntersecting) {
+                                    const interval = setInterval(() => {
+                                        if (this.count < this.target) {
+                                            this.count++;
+                                        } else {
+                                            clearInterval(interval);
+                                        }
+                                    }, 2000 / this.target);
+                                }
+                            });
+                            observer.observe(this.$el);
+                        }
+                    }"
+                >
+                    <div class="text-6xl font-bold mb-2" x-text="count"></div>
+                    <div class="text-xl font-medium">{{ $counter['label'] }}</div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Action -->
     <section id="contact" class="py-24 px-6 md:px-12 bg-black border-t-4 border-black text-white">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                <span class="block">READY TO</span>
-                <span class="block text-[#FFD166]">ELEVATE YOUR BRAND?</span>
+                <span class="block">¿LISTO PARA</span>
+                <span class="block text-[#FFD166]">ELEVAR TU MARCA?</span>
             </h2>
             <p class="text-xl mb-12 max-w-2xl mx-auto">
-                Let's create something extraordinary together. Our team is ready to bring your vision to life with bold, innovative design.
+                Creemos algo extraordinario juntos. Nuestro equipo está listo para dar vida a tu visión con un diseño audaz e innovador.
             </p>
             <div class="flex flex-wrap justify-center gap-6">
                 <a 
-                    href="#" 
+                    wire:navigate
+                    href="/contactanos"
                     class="px-8 py-4 border-4 border-[#FF5252] bg-[#FF5252] text-white font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(255,82,82,0.3)]"
                 >
-                    GET IN TOUCH
+                    CONTÁCTANOS
                 </a>
                 <a 
-                    href="#" 
+                    href="/demo"
                     class="px-8 py-4 border-4 border-white bg-transparent text-white font-bold text-lg transform transition hover:-translate-y-1 hover:bg-white hover:text-black"
                 >
-                    VIEW OUR PROCESS
+                    VER NUESTRO PROCESO
                 </a>
             </div>
         </div>
