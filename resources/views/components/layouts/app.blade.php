@@ -32,7 +32,8 @@
         <meta name="theme-color" content="#000000">
         
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/apple.ico') }}">
+
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         
         <!-- Preload critical resources -->
