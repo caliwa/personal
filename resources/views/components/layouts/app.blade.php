@@ -41,7 +41,7 @@
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"></noscript>
         @livewireStyles
     <!-- CSS -->
-    @vite('resources/css/app.css')
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
