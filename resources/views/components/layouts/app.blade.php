@@ -195,23 +195,23 @@
         </nav>
 
     <!-- Mobile Menu -->
-    <div 
-        x-show="mobileMenuOpen" 
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 transform -translate-y-10"
-        x-transition:enter-end="opacity-100 transform translate-y-0"
-        x-transition:leave="transition ease-in duration-300"
-        x-transition:leave-start="opacity-100 transform translate-y-0"
-        x-transition:leave-end="opacity-0 transform -translate-y-10"
-        class="md:hidden bg-white border-b-4 border-black"
-        aria-hidden="true"
-    >
-        <div class="flex flex-col py-4 px-6">
-            <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/landing" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Inicio</a>
-            <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Contáctenos</a>
-            <a wire:current='decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Demo</a>
-        </div>
+<div 
+    x-show="mobileMenuOpen" 
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform -translate-y-10"
+    x-transition:enter-end="opacity-100 transform translate-y-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 transform translate-y-0"
+    x-transition:leave-end="opacity-0 transform -translate-y-10"
+    class="md:hidden bg-white border-b-4 border-black sticky top-16 z-40 backdrop-blur-md shadow-lg"
+    aria-hidden="true"
+>
+    <div class="flex flex-col py-4 px-6">
+        <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/landing" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Inicio</a>
+        <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Contáctenos</a>
+        <a wire:current='decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Demo</a>
     </div>
+</div>
 
     <body>
         {{ $slot }}

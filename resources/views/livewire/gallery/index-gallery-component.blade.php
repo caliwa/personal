@@ -63,6 +63,8 @@
         }
     ],
     initGallery() {
+
+        return;
         const gallery = this.$refs.infiniteGallery;
         const galleryContent = this.$refs.galleryContent;
         
