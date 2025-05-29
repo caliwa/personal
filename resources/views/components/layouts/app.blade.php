@@ -177,9 +177,9 @@
                 <span x-text="typewriterText"></span><span class="cursor text-black">|</span>
             </div>
             <div class="hidden md:flex space-x-8">
-                <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/landing" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Inicio</a>
-                <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Contáctenos</a>
-                <a wire:current='decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Demo</a>
+                <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Inicio</a>
+                <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Contáctenos</a>
+                <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Demo</a>
             </div>
             <div class="md:hidden">
                 <button 
@@ -207,9 +207,9 @@
     aria-hidden="true"
 >
     <div class="flex flex-col py-4 px-6">
-        <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/landing" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Inicio</a>
-        <a wire:navigate wire:current='decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Contáctenos</a>
-        <a wire:current='decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Demo</a>
+        <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Inicio</a>
+        <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Contáctenos</a>
+        <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Demo</a>
     </div>
 </div>
 

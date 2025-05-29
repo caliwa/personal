@@ -7,14 +7,9 @@ use App\Livewire\TestExamples\MediatorTestExamplesComponent;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-
-    return redirect('/landing');
-});
-
 //Route::get('/landing', MediatorDashboardComponent::class)->name('dashboard');
 
-Route::get('/landing', MediatorGalleyComponent::class)->name('dashboard');
+Route::get('/', MediatorGalleyComponent::class)->name('dashboard');
 
 Route::get('/contactanos', MediatorContactFormComponent::class)->name('contactform');
 
