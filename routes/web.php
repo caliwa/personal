@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Cerrajeria\Auth\CerrajeriaLoginComponent;
+use App\Livewire\Cerrajeria\Dashboard\DashboardMediatorComponent;
 use App\Livewire\ContactForm\MediatorContactFormComponent;
 use App\Livewire\Dashboard\MediatorDashboardComponent;
 use App\Livewire\Gallery\MediatorGalleyComponent;
@@ -19,3 +20,6 @@ Route::get('/demo', MediatorTestExamplesComponent::class)->name('testexamples');
 
 Route::get('/cerrajeria', CerrajeriaLoginComponent::class)->name('cerrajeria.login');
 
+Route::prefix('cerrajeria')->group(function () {
+    Route::get('/dashboard', DashboardMediatorComponent::class)->name('dashboard-cerrajeria');
+});

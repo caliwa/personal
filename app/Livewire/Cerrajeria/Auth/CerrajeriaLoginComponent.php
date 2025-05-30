@@ -4,27 +4,27 @@ namespace App\Livewire\Cerrajeria\Auth;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Validate;
 
 #[Layout('components.layouts.cerrajeria')]
 class CerrajeriaLoginComponent extends Component
 {
-    public $email = '';
-    public $password = '';
+    #[Validate('required', message: 'El campo :attribute es obligatorio.')]
+    #[Validate('email', message: 'El campo :attribute debe ser un correo electrónico válido.')]
+    public $email;
+    #[Validate('required', message: 'La contraseña es obligatoria.')]
+    public $password;
     public $remember_me = false;
-
-    protected $rules = [
-        'email' => 'required|email:rfc,dns',
-        'password' => 'required',
-    ];
 
     public function mount()
     {
-        $this->fill(['email' => 'admin@softui.com', 'password' => 'secret']);
+        //$this->fill(['email' => 'admin@softui.com', 'password' => 'secret']);
     }
 
     public function login()
     {
         $this->validate();
+        $this->redirectRoute('dashboard-cerrajeria', navigate:true);
     }
 
     public function render()

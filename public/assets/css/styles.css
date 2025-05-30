@@ -1925,7 +1925,7 @@ h6 {
 }
 
 .bg-gradient-fuchsia {
-  background-image: linear-gradient(310deg,#7928ca,#ff0080);
+    background-image: linear-gradient(310deg, #14532d, #6ee7b7);
 }
 
 .bg-gradient-slate {
@@ -1937,7 +1937,7 @@ h6 {
 }
 
 .bg-gradient-cyan {
-  background-image: linear-gradient(310deg,#2152ff,#21d4fd);
+  background-image: linear-gradient(310deg, #14532d, #6ee7b7);
 }
 
 .bg-gradient-orange {
