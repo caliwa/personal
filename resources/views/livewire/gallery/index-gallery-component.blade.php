@@ -9,62 +9,106 @@
     projects: [
         {
             id: 1,
-            title: 'Skyline Tower',
-            category: 'architecture',
-            description: 'Rascacielos brutalista con 85 pisos y estructura de hormigón expuesto.',
-            image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&auto=format&fit=crop&q=60',
-            client: 'Urban Developments',
-            year: '2023'
+            title: 'Cotizador Doblamos',
+            category: 'arquitectura',
+            description: 'Cotizador para figuras de acero estándar y servicios',
+            challenge: 'Desarrollar una plataforma intuitiva que permita a los usuarios cotizar estructuras de acero de manera rápida y precisa.',
+            image: '{{ asset("img/archivosrubicon/cot1.png") }}',
+            gallery: [
+                '{{ asset("img/archivosrubicon/cot1.png") }}',
+                '{{ asset("img/archivosrubicon/cot2.png") }}',
+                '{{ asset("img/archivosrubicon/cot3.png") }}',
+                '{{ asset("img/archivosrubicon/cot4.png") }}'
+            ],
+            client: 'Doblamos S.A.S',
+            year: '2025'
         },
         {
             id: 2,
-            title: 'Nebula App',
+            title: 'GTT - Tecnoal',
             category: 'digital',
-            description: 'Plataforma de diseño UI con enfoque en experiencia inmersiva.',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60',
-            client: 'TechNova',
+            description: 'Plataforma de gestión de usuarios.',
+            challenge: 'Crear una interfaz de usuario intuitiva y un sistema de backend robusto para gestionar usuarios y sus datos de manera eficiente.',
+            image: '{{ asset("img/archivosrubicon/gtt4.png") }}',
+            gallery: [
+                '{{ asset("img/archivosrubicon/gtt1.png") }}',
+                '{{ asset("img/archivosrubicon/gtt2.png") }}',
+                '{{ asset("img/archivosrubicon/gtt3.png") }}',
+                {{-- '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+            ],
+            client: 'Tecnoal S.A.S',
             year: '2024'
         },
         {
             id: 3,
-            title: 'Volta Branding',
+            title: 'Ideas en línea Chatbot',
             category: 'branding',
-            description: 'Identidad visual para marca de autos eléctricos de lujo.',
-            image: 'https://images.unsplash.com/photo-1605733513597-a8f8341084e6?w=800&auto=format&fit=crop&q=60',
-            client: 'Volta Motors',
+            description: 'Identidad visual para diversos nichos de mercado.',
+            challenge: 'Auomatizar la atención al cliente mediante un chatbot que pueda responder preguntas frecuentes y guiar a los usuarios en sus compras.',
+            image: '{{ asset("img/archivosrubicon/ideas3.png") }}',
+            gallery: [
+                '{{ asset("img/archivosrubicon/ideas1.jpeg") }}',
+                '{{ asset("img/archivosrubicon/ideas2.jpeg") }}',
+                {{-- '{{ asset("img/archivosrubicon/cot3.png") }}', --}}
+                {{-- '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+            ],
+            client: 'Ideas en línea',
             year: '2023'
         },
         {
             id: 4,
-            title: 'The Concrete Journal',
+            title: 'PDF Ahorro físico de papel',
             category: 'editorial',
-            description: 'Publicación anual sobre arquitectura contemporánea.',
-            image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&auto=format&fit=crop&q=60',
-            client: 'Arch Press',
-            year: '2022'
+            description: 'Creación de aplicación para bocetado y edición de documentos PDF.',
+            challenge: 'Desarrollar una aplicación que permita a los usuarios editar y anotar documentos PDF de manera eficiente, reduciendo el uso de papel.',
+            image: '{{ asset("img/archivosrubicon/dob1.png") }}',
+            gallery: [
+                '{{ asset("img/archivosrubicon/cot1.png") }}',
+                '{{ asset("img/archivosrubicon/cot2.png") }}',
+                '{{ asset("img/archivosrubicon/cot3.png") }}',
+                '{{ asset("img/archivosrubicon/cot4.png") }}'
+            ],
+            client: 'Doblamos S.A.S',
+            year: '2024'
         },
         {
             id: 5,
-            title: 'Luminous Hotel',
-            category: 'architecture',
-            description: 'Hotel boutique con fachada de cristal texturizado y acero.',
-            image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop&q=60',
-            client: 'Lux Hospitality',
-            year: '2021'
+            title: 'Videojuego multiplataforma educativo',
+            category: 'digital',
+            description: 'Juego de aventuras para aprender sobre emprendimiento y finanzas.',
+            challenge: 'Diseñar y desarrollar un videojuego interactivo que enseñe conceptos de emprendimiento y finanzas a través de una narrativa atractiva.',
+            image: '{{ asset("img/archivosrubicon/kaplayjs.png") }}',
+            gallery: [
+                '{{ asset("img/archivosrubicon/sonic4.png") }}',
+                '{{ asset("img/archivosrubicon/kaplayjs2.png") }}',
+                '{{ asset("img/archivosrubicon/kaplayjs3.jpg") }}',
+                {{-- '{{ asset("img/archivosrubicon/cot2.png") }}',
+                '{{ asset("img/archivosrubicon/cot3.png") }}',
+                '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+            ],
+            client: 'Politécnico Colombiano JIC',
+            year: '2025'
         },
         {
             id: 6,
-            title: 'Edge Dashboards',
+            title: 'Cervecerías y cócteles',
             category: 'digital',
-            description: 'Sistema de analytics para comercio electrónico.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60',
-            client: 'MarketForce',
-            year: '2023'
-        }
+            description: 'Sistema de analytics para cervecerías y bares.',
+            challenge: 'Desarrollar un sistema de análisis de datos que permita a los propietarios de cervecerías y bares entender mejor el comportamiento de sus clientes y optimizar sus operaciones.',
+            image: '{{ asset("img/archivosrubicon/py2.png") }}',
+            gallery: [
+                '{{ asset("img/archivosrubicon/py1.png") }}',
+                '{{ asset("img/archivosrubicon/py3.png") }}',
+                '{{ asset("img/archivosrubicon/py4.png") }}',
+                {{-- '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+            ],
+            client: 'La Forja',
+            year: '2024'
+        },
+
     ],
     initGallery() {
 
-        return;
         const gallery = this.$refs.infiniteGallery;
         const galleryContent = this.$refs.galleryContent;
         
@@ -142,18 +186,53 @@ x-on:scroll.window="!showModal || closeModal()"
         </div>
         
         <!-- Contenido abajo -->
-        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
-            <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
-                <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
-                    Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.
-                </p>
+<div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
+    <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
+        <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
+            Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.
+        </p>
+    </div>
+    <div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
+        <!-- Diseño de mando reconocible -->
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="relative w-full h-full max-w-[180px]">
+                <!-- Parte izquierda - Cruz direccional -->
+                <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+                    <div class="relative w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-lg rotate-45">
+                        <div class="absolute inset-1 bg-[#ff0000] rounded-sm"></div>
+                        <div class="absolute top-1/2 left-1/2 w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Parte derecha - Botones de acción (ABXY) -->
+                <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <div class="relative w-12 h-12 sm:w-14 sm:h-14">
+                        <!-- Botón A (verde) -->
+                        <div class="absolute top-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#00ff00] border-2 border-black rounded-full"></div>
+                        <!-- Botón B (rojo) -->
+                        <div class="absolute bottom-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ff0000] border-2 border-black rounded-full"></div>
+                        <!-- Botón X (azul) -->
+                        <div class="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#0000ff] border-2 border-black rounded-full"></div>
+                        <!-- Botón Y (amarillo) -->
+                        <div class="absolute bottom-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ffff00] border-2 border-black rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Botones centrales (Start/Select) -->
+                <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                    <div class="w-8 h-3 bg-black rounded-full"></div>
+                    <div class="w-8 h-3 bg-black rounded-full"></div>
+                </div>
             </div>
-            <div class="w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float"></div>
         </div>
+        
+        <!-- Efecto de textura/grabado sutil -->
+        <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.05),rgba(0,0,0,0.05)_1px,transparent_1px,transparent_3px)]"></div>
+    </div>
+</div>
     </div>
 </section>
 
-    <!-- Infinite Horizontal Gallery 
     <section class="relative py-12 border-b-4 border-black bg-white overflow-hidden group">
         
         <div 
@@ -183,7 +262,7 @@ x-on:scroll.window="!showModal || closeModal()"
                                 :class="{
                                     'bg-[#06D6A0]': project.category === 'digital',
                                     'bg-[#FFD166]': project.category === 'branding',
-                                    'bg-[#FF5252]': project.category === 'architecture',
+                                    'bg-[#FF5252]': project.category === 'arquitectura',
                                     'bg-[#118AB2]': project.category === 'editorial'
                                 }"
                             >
@@ -257,7 +336,7 @@ x-on:scroll.window="!showModal || closeModal()"
                             :class="{
                                 'bg-[#06D6A0]': currentProject?.category === 'digital',
                                 'bg-[#FFD166]': currentProject?.category === 'branding',
-                                'bg-[#FF5252]': currentProject?.category === 'architecture',
+                                'bg-[#FF5252]': currentProject?.category === 'arquitectura',
                                 'bg-[#118AB2]': currentProject?.category === 'editorial'
                             }"
                         >
@@ -267,7 +346,7 @@ x-on:scroll.window="!showModal || closeModal()"
                     </div>
                     <div class="text-right">
                         <div class="text-2xl font-bold" x-text="currentProject?.year"></div>
-                        <div class="text-sm uppercase tracking-widest">Year</div>
+                        <div class="text-sm uppercase tracking-widest">Año</div>
                     </div>
                 </div>
                 
@@ -277,7 +356,7 @@ x-on:scroll.window="!showModal || closeModal()"
                         <p class="mb-6 text-lg leading-relaxed" x-text="currentProject?.description"></p>
                         <div class="bg-gray-100 border-2 border-black p-6">
                             <h4 class="font-bold mb-2">Reto</h4>
-                            <p>Crear una identidad distintiva que combine la estética brutalista con la elegancia funcional, cumpliendo todos los requisitos del cliente en cuanto a usabilidad y reconocimiento de marca.</p>
+                            <p x-text="currentProject?.challenge"></p>
                         </div>
                     </div>
                     <div class="border-4 border-black p-6 bg-gray-50">
@@ -300,21 +379,22 @@ x-on:scroll.window="!showModal || closeModal()"
                 </div>
                 
                 <!-- Galería secundaria -->
-                <div class="mb-12">
+                <div class="mb-12" x-show="currentProject?.gallery && currentProject.gallery.length > 0">
                     <h3 class="text-xl font-bold mb-6 border-b-2 border-black pb-2">Galería del Proyecto</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <template x-for="i in 4" :key="i">
+                        <template x-for="(imageUrl, index) in currentProject?.gallery" :key="index">
                             <div class="border-2 border-black overflow-hidden h-40 md:h-56">
                                 <img 
-                                    :src="`https://source.unsplash.com/random/600x800/?architecture,design,${i}&sig=${currentProject?.id}`" 
-                                    :alt="`${currentProject?.title} detail ${i}`" 
+                                    :src="imageUrl" 
+                                    :alt="`${currentProject?.title} imagen ${index + 1}`" 
                                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                    onerror="this.src='https://via.placeholder.com/400x600/cccccc/666666?text=Imagen+no+disponible'"
                                 >
                             </div>
                         </template>
                     </div>
                 </div>
-                
+
                 <!-- Navegación -->
                 <div class="flex justify-between items-center border-t-4 border-black pt-6">
                     <button 
