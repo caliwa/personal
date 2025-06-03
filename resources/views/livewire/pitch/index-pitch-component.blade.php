@@ -339,7 +339,12 @@
                 </div>
             </div>
             
-            {{-- <a href="#contacto" class="cta-button">Invierte en el Futuro</a> --}}
+            <div style="text-align: center; margin: 30px 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <img src="https://m.media-amazon.com/images/I/81JK0Tghg+L._AC_UF894,1000_QL80_.jpg" 
+                    alt="Raspberry Pi 5" 
+                    style="max-width: 300px; width: 100%; height: auto; border: 3px solid white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <p style="color: #a8edea; margin-top: 15px; font-size: 1.1rem;"><strong>Raspberry Pi 5</strong> - Infraestructura de bajo costo, alto rendimiento</p>
+            </div>
         </div>
     </div>
 </body>
