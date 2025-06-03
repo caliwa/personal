@@ -63,10 +63,11 @@
             challenge: 'Desarrollar una aplicación que permita a los usuarios editar y anotar documentos PDF de manera eficiente, reduciendo el uso de papel.',
             image: '{{ asset("img/archivosrubicon/dob1.png") }}',
             gallery: [
-                '{{ asset("img/archivosrubicon/cot1.png") }}',
+                '{{ asset("img/archivosrubicon/dob2.png") }}',
+                {{-- '{{ asset("img/archivosrubicon/cot1.png") }}',
                 '{{ asset("img/archivosrubicon/cot2.png") }}',
                 '{{ asset("img/archivosrubicon/cot3.png") }}',
-                '{{ asset("img/archivosrubicon/cot4.png") }}'
+                '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
             ],
             client: 'Doblamos S.A.S',
             year: '2024'
