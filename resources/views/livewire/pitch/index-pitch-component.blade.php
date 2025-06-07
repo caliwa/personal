@@ -321,31 +321,6 @@
             <p>La industria de videojuegos crece exponencialmente. La educación necesita innovación urgente. <strong>Nuestra app está en la intersección perfecta de estas dos mega-tendencias.</strong></p>
         </div>
 
-        <div class="cta-section">
-            <h2>🚀 Únete a la Revolución Educativa</h2>
-            <p style="font-size: 1.3rem; margin: 30px 0;">No es solo una app. Es el futuro de cómo aprenderán las próximas generaciones.</p>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 30px; margin: 30px 0; border: 2px solid white;">
-                <h3 style="color: #fff; margin-bottom: 20px;">💡 Objetivos de Financiamiento</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
-                    <div>
-                        <h4 style="color: #a8edea; margin-bottom: 10px;">🔧 Renovación Tecnológica</h4>
-                        <p>Licencia anual KaplayJS (Marzo 2026): <strong>$1,000,000 COP</strong></p>
-                    </div>
-                    <div>
-                        <h4 style="color: #fed6e3; margin-bottom: 10px;">⚡ Escalabilidad</h4>
-                        <p>Expansión con 2 Raspberry Pi 5 adicionales para un escalamiento horizontal de la infraestructura del emprendimiento</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin: 30px 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <img src="https://m.media-amazon.com/images/I/81JK0Tghg+L._AC_UF894,1000_QL80_.jpg" 
-                    alt="Raspberry Pi 5" 
-                    style="max-width: 300px; width: 100%; height: auto; border: 3px solid white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                <p style="color: #a8edea; margin-top: 15px; font-size: 1.1rem;"><strong>Raspberry Pi 5</strong> - Infraestructura de bajo costo, alto rendimiento</p>
-            </div>
-        </div>
     </div>
 </body>
 </html>
