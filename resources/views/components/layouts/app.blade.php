@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Primary Meta Tags -->
-        <title>Rubicon | Soluciones Empresariales para Automatización y Optimización de Procesos</title>
+        <title>Rubicon | Optimiza tus Procesos con Soluciones Inteligentes</title>
         <meta name="title" content="Rubicon | Transformación Digital para Medianas y Grandes Empresas">
-        <meta name="description" content="Rubicon ofrece soluciones integrales para optimizar flujos de caja, gestión de inventarios, sistemas QR y automatización de procesos. Mejoramos la experiencia de usuario en sistemas empresariales.">
+        <meta name="description" content="Rubicon ofrece soluciones de ingeniería vanguardista con enfoque en gamificación y eficiencia para transformar procesos empresariales.">
+
         <meta name="robots" content="index, follow">
         {{-- <meta name="keywords" content="automatización empresarial, flujos de caja, gestión de inventarios, sistemas QR, transformación digital, experiencia de usuario empresarial, Rubicon, optimización de procesos"> --}}
         <meta name="author" content="Rubicon Carlos González">

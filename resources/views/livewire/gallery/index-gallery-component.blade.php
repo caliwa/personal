@@ -291,7 +291,8 @@ x-on:scroll.window="!showModal || closeModal()"
 
     <!-- Project Modal -->
     <div 
-        x-show="showModal" 
+        x-show="showModal"
+        x-cloack
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100"
