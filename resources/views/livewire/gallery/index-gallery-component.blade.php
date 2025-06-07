@@ -2,7 +2,7 @@
     activeCategory: 'all',
     showModal: false,
     currentProject: null,
-    scrollSpeed: 1.5,
+    scrollSpeed: 2,
     scrollPaused: false,
     animationId: null,
     direction: 1,
@@ -13,12 +13,12 @@
             category: 'arquitectura',
             description: 'Cotizador para figuras de acero estándar y servicios',
             challenge: 'Desarrollar una plataforma intuitiva que permita a los usuarios cotizar estructuras de acero de manera rápida y precisa.',
-            image: '{{ asset("img/archivosrubicon/cot1.png") }}',
+            image: '/img/archivosrubicon/cot1.png',
             gallery: [
-                '{{ asset("img/archivosrubicon/cot1.png") }}',
-                '{{ asset("img/archivosrubicon/cot2.png") }}',
-                '{{ asset("img/archivosrubicon/cot3.png") }}',
-                '{{ asset("img/archivosrubicon/cot4.png") }}'
+                '/img/archivosrubicon/cot1.png',
+                '/img/archivosrubicon/cot2.png',
+                '/img/archivosrubicon/cot3.png',
+                '/img/archivosrubicon/cot4.png'
             ],
             client: 'Doblamos S.A.S',
             year: '2025'
@@ -29,12 +29,11 @@
             category: 'digital',
             description: 'Plataforma de gestión de usuarios.',
             challenge: 'Crear una interfaz de usuario intuitiva y un sistema de backend robusto para gestionar usuarios y sus datos de manera eficiente.',
-            image: '{{ asset("img/archivosrubicon/gtt4.png") }}',
+            image: '/img/archivosrubicon/gtt4.png',
             gallery: [
-                '{{ asset("img/archivosrubicon/gtt1.png") }}',
-                '{{ asset("img/archivosrubicon/gtt2.png") }}',
-                '{{ asset("img/archivosrubicon/gtt3.png") }}',
-                {{-- '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+                '/img/archivosrubicon/gtt1.png',
+                '/img/archivosrubicon/gtt2.png',
+                '/img/archivosrubicon/gtt3.png'
             ],
             client: 'Tecnoal S.A.S',
             year: '2024'
@@ -44,13 +43,11 @@
             title: 'Ideas en línea Chatbot',
             category: 'branding',
             description: 'Identidad visual para diversos nichos de mercado.',
-            challenge: 'Auomatizar la atención al cliente mediante un chatbot que pueda responder preguntas frecuentes y guiar a los usuarios en sus compras.',
-            image: '{{ asset("img/archivosrubicon/ideas3.png") }}',
+            challenge: 'Automatizar la atención al cliente mediante un chatbot que pueda responder preguntas frecuentes y guiar a los usuarios en sus compras.',
+            image: '/img/archivosrubicon/ideas3.png',
             gallery: [
-                '{{ asset("img/archivosrubicon/ideas1.jpeg") }}',
-                '{{ asset("img/archivosrubicon/ideas2.jpeg") }}',
-                {{-- '{{ asset("img/archivosrubicon/cot3.png") }}', --}}
-                {{-- '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+                '/img/archivosrubicon/ideas1.jpeg',
+                '/img/archivosrubicon/ideas2.jpeg'
             ],
             client: 'Ideas en línea',
             year: '2023'
@@ -61,13 +58,9 @@
             category: 'editorial',
             description: 'Creación de aplicación para bocetado y edición de documentos PDF.',
             challenge: 'Desarrollar una aplicación que permita a los usuarios editar y anotar documentos PDF de manera eficiente, reduciendo el uso de papel.',
-            image: '{{ asset("img/archivosrubicon/dob1.png") }}',
+            image: '/img/archivosrubicon/dob1.png',
             gallery: [
-                '{{ asset("img/archivosrubicon/dob2.png") }}',
-                {{-- '{{ asset("img/archivosrubicon/cot1.png") }}',
-                '{{ asset("img/archivosrubicon/cot2.png") }}',
-                '{{ asset("img/archivosrubicon/cot3.png") }}',
-                '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+                '/img/archivosrubicon/dob2.png'
             ],
             client: 'Doblamos S.A.S',
             year: '2024'
@@ -78,14 +71,11 @@
             category: 'digital',
             description: 'Juego de aventuras para aprender sobre emprendimiento y finanzas.',
             challenge: 'Diseñar y desarrollar un videojuego interactivo que enseñe conceptos de emprendimiento y finanzas a través de una narrativa atractiva.',
-            image: '{{ asset("img/archivosrubicon/kaplayjs.png") }}',
+            image: '/img/archivosrubicon/kaplayjs.png',
             gallery: [
-                '{{ asset("img/archivosrubicon/sonic4.png") }}',
-                '{{ asset("img/archivosrubicon/kaplayjs2.png") }}',
-                '{{ asset("img/archivosrubicon/kaplayjs3.jpg") }}',
-                {{-- '{{ asset("img/archivosrubicon/cot2.png") }}',
-                '{{ asset("img/archivosrubicon/cot3.png") }}',
-                '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+                '/img/archivosrubicon/sonic4.png',
+                '/img/archivosrubicon/kaplayjs2.png',
+                '/img/archivosrubicon/kaplayjs3.jpg'
             ],
             client: 'Politécnico Colombiano JIC',
             year: '2025'
@@ -96,22 +86,21 @@
             category: 'digital',
             description: 'Sistema de analytics para cervecerías y bares.',
             challenge: 'Desarrollar un sistema de análisis de datos que permita a los propietarios de cervecerías y bares entender mejor el comportamiento de sus clientes y optimizar sus operaciones.',
-            image: '{{ asset("img/archivosrubicon/py2.png") }}',
+            image: '/img/archivosrubicon/py2.png',
             gallery: [
-                '{{ asset("img/archivosrubicon/py1.png") }}',
-                '{{ asset("img/archivosrubicon/py3.png") }}',
-                '{{ asset("img/archivosrubicon/py4.png") }}',
-                {{-- '{{ asset("img/archivosrubicon/cot4.png") }}' --}}
+                '/img/archivosrubicon/py1.png',
+                '/img/archivosrubicon/py3.png',
+                '/img/archivosrubicon/py4.png'
             ],
             client: 'La Forja',
             year: '2024'
-        },
-
+        }
     ],
     initGallery() {
-
         const gallery = this.$refs.infiniteGallery;
         const galleryContent = this.$refs.galleryContent;
+        
+        if (!gallery || !galleryContent) return;
         
         // Duplicar contenido para efecto infinito
         galleryContent.innerHTML += galleryContent.innerHTML;
@@ -119,9 +108,12 @@
         const scrollGallery = () => {
             if (!gallery) return;
             
-            // Reiniciar posición cuando llegue al final
-            if (gallery.scrollLeft >= (galleryContent.scrollWidth/2 - gallery.clientWidth)) {
-                gallery.scrollLeft = 0;
+            // Obtener el ancho de la primera mitad del contenido
+            const contentWidth = galleryContent.scrollWidth / 2;
+            
+            // Reiniciar posición cuando llegue al final de la primera mitad
+            if (gallery.scrollLeft >= contentWidth) {
+                gallery.scrollLeft -= contentWidth;
             }
             
             if (!this.scrollPaused) {
@@ -147,10 +139,24 @@
         this.currentProject = project;
         this.showModal = true;
         document.body.style.overflow = 'hidden';
+        
+        // Resetear scroll del modal al inicio
+        this.$nextTick(() => {
+            const modalContent = this.$el.querySelector('.fixed.inset-0 .overflow-y-auto');
+            if (modalContent) {
+                modalContent.scrollTop = 0;
+            }
+        });
     },
     closeModal() {
         this.showModal = false;
         document.body.style.overflow = 'auto';
+        
+        // Resetear scroll del modal al cerrar
+        const modalContent = this.$el.querySelector('.fixed.inset-0 .overflow-y-auto');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
     },
     reverseScroll() {
         this.direction = -1;
@@ -164,78 +170,77 @@ x-on:keydown.escape="closeModal"
 x-on:scroll.window="!showModal || closeModal()"
 >
     <!-- Hero Section -->
-<!-- Hero Section -->
-<section class="relative py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b-4 border-black bg-[#0d0c0a] text-white overflow-hidden">
-    <!-- Efecto de fondo dinámico -->
-
-    <div class="max-w-6xl mx-auto relative z-10">
-        <!-- Contenedor principal para el título y el fondo -->
-        <div class="flex flex-col lg:flex-row">
-            <!-- Título a la izquierda -->
-            <div class="w-full lg:w-1/2 h-full">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
-                    <span class="block animate-slide-in" style="animation-delay: 0.1s">EXHIBICIÓN</span>
-                    <span class="block text-[#FF5252] animate-slide-in" style="animation-delay: 0.3s">PORTAFOLIO</span>
-                </h1>
+    <section class="relative py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b-4 border-black bg-[#0d0c0a] text-white overflow-hidden">
+        <!-- Efecto de fondo dinámico -->
+        <div class="max-w-6xl mx-auto relative z-10">
+            <!-- Contenedor principal para el título y el fondo -->
+            <div class="flex flex-col lg:flex-row">
+                <!-- Título a la izquierda -->
+                <div class="w-full lg:w-1/2 h-full">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
+                        <span class="block animate-slide-in" style="animation-delay: 0.1s">EXHIBICIÓN</span>
+                        <span class="block text-[#FF5252] animate-slide-in" style="animation-delay: 0.3s">PORTAFOLIO</span>
+                    </h1>
+                </div>
+                
+                <!-- Logo a la derecha -->
+                <div class="w-full lg:w-1/2 h-full flex justify-center lg:ml-[210px] items-center mt-8">
+                    <img src="{{ asset('img/RUBICONLOGO.png') }}" alt="Rubicon Logo" 
+                        class="w-48 sm:w-56 md:w-64 animate-slide-in">
+                </div>
             </div>
             
-            <!-- Logo a la derecha -->
-            <div class="w-full lg:w-1/2 h-full flex justify-center lg:ml-[210px] items-center mt-8">
-                <img src="{{ asset('img/RUBICONLOGO.png') }}" alt="Rubicon Logo" 
-                     class="w-48 sm:w-56 md:w-64 animate-slide-in">
+            <!-- Contenido abajo -->
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
+                <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
+                    <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
+                        Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.<br>
+                        <span class="italic text-gray-500">(¿Puedes creer que esta pagina está en una Raspberry Pi 5?)</span>
+                    </p>
+                </div>
+
+                <div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
+                    <!-- Diseño de mando reconocible -->
+                    <div class="absolute inset-0 flex items-center justify-center p-4">
+                        <div class="relative w-full h-full max-w-[180px]">
+                            <!-- Parte izquierda - Cruz direccional -->
+                            <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+                                <div class="relative w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-lg rotate-45">
+                                    <div class="absolute inset-1 bg-[#ff0000] rounded-sm"></div>
+                                    <div class="absolute top-1/2 left-1/2 w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Parte derecha - Botones de acción (ABXY) -->
+                            <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+                                <div class="relative w-12 h-12 sm:w-14 sm:h-14">
+                                    <!-- Botón A (verde) -->
+                                    <div class="absolute top-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#00ff00] border-2 border-black rounded-full"></div>
+                                    <!-- Botón B (rojo) -->
+                                    <div class="absolute bottom-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ff0000] border-2 border-black rounded-full"></div>
+                                    <!-- Botón X (azul) -->
+                                    <div class="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#0000ff] border-2 border-black rounded-full"></div>
+                                    <!-- Botón Y (amarillo) -->
+                                    <div class="absolute bottom-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ffff00] border-2 border-black rounded-full"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Botones centrales (Start/Select) -->
+                            <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                                <div class="w-8 h-3 bg-black rounded-full"></div>
+                                <div class="w-8 h-3 bg-black rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Efecto de textura/grabado sutil -->
+                    <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.05),rgba(0,0,0,0.05)_1px,transparent_1px,transparent_3px)]"></div>
+                </div>
             </div>
         </div>
-        
-        <!-- Contenido abajo -->
-<div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
-    <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
-        <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
-            Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.
-        </p>
-    </div>
-    <div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
-        <!-- Diseño de mando reconocible -->
-        <div class="absolute inset-0 flex items-center justify-center p-4">
-            <div class="relative w-full h-full max-w-[180px]">
-                <!-- Parte izquierda - Cruz direccional -->
-                <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
-                    <div class="relative w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-lg rotate-45">
-                        <div class="absolute inset-1 bg-[#ff0000] rounded-sm"></div>
-                        <div class="absolute top-1/2 left-1/2 w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full"></div>
-                    </div>
-                </div>
-                
-                <!-- Parte derecha - Botones de acción (ABXY) -->
-                <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <div class="relative w-12 h-12 sm:w-14 sm:h-14">
-                        <!-- Botón A (verde) -->
-                        <div class="absolute top-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#00ff00] border-2 border-black rounded-full"></div>
-                        <!-- Botón B (rojo) -->
-                        <div class="absolute bottom-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ff0000] border-2 border-black rounded-full"></div>
-                        <!-- Botón X (azul) -->
-                        <div class="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#0000ff] border-2 border-black rounded-full"></div>
-                        <!-- Botón Y (amarillo) -->
-                        <div class="absolute bottom-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ffff00] border-2 border-black rounded-full"></div>
-                    </div>
-                </div>
-                
-                <!-- Botones centrales (Start/Select) -->
-                <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-3">
-                    <div class="w-8 h-3 bg-black rounded-full"></div>
-                    <div class="w-8 h-3 bg-black rounded-full"></div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Efecto de textura/grabado sutil -->
-        <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.05),rgba(0,0,0,0.05)_1px,transparent_1px,transparent_3px)]"></div>
-    </div>
-</div>
-    </div>
-</section>
+    </section>
 
     <section class="relative py-12 border-b-4 border-black bg-white overflow-hidden group">
-        
         <div 
             x-ref="infiniteGallery"
             class="overflow-x-hidden py-8 scrollbar-hide"
@@ -271,7 +276,6 @@ x-on:scroll.window="!showModal || closeModal()"
                             </div>
                         </div>
                         
-
                         <div class="p-6 h-1/3 flex flex-col">
                             <h3 class="text-2xl font-bold mb-2" x-text="project.title"></h3>
                             <p class="text-sm mb-4 line-clamp-2" x-text="project.description"></p>
@@ -412,9 +416,6 @@ x-on:scroll.window="!showModal || closeModal()"
                         class="px-8 py-3 border-4 border-black font-bold bg-black text-white hover:bg-[#FF5252] transition-all duration-300 flex items-center gap-2"
                     >
                         INICIAR TU PROYECTO
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
                     </a>
                 </div>
             </div>
