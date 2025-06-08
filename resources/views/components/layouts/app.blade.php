@@ -5,26 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Primary Meta Tags -->
-        <title>Rubicon | Optimiza tus Procesos con Soluciones Inteligentes</title>
-        <meta name="title" content="Rubicon | Transformación Digital para Medianas y Grandes Empresas">
-        <meta name="description" content="Rubicon ofrece soluciones de ingeniería vanguardista con enfoque en gamificación y eficiencia para transformar procesos empresariales.">
+        <title>Rubicon | Soluciones Inteligentes en Medellín, Colombia - Transformación Digital</title>
+        <meta name="title" content="Rubicon Medellín | Transformación Digital para Empresas en Colombia">
+        <meta name="description" content="Rubicon en Medellín, Colombia. Especialistas en automatización empresarial, flujos de caja y gestión de inventarios. Soluciones tecnológicas para empresas en Antioquia.">
 
         <meta name="robots" content="index, follow">
-        {{-- <meta name="keywords" content="automatización empresarial, flujos de caja, gestión de inventarios, sistemas QR, transformación digital, experiencia de usuario empresarial, Rubicon, optimización de procesos"> --}}
+        <meta name="keywords" content="automatización empresarial Medellín, flujos de caja Colombia, gestión inventarios Antioquia, sistemas QR Medellín, transformación digital Colombia, Rubicon Medellín, optimización procesos empresariales Colombia">
         <meta name="author" content="Rubicon Carlos González">
+        <meta name="geo.region" content="CO-ANT">
+        <meta name="geo.placename" content="Medellín">
+        <meta name="geo.position" content="6.2442;-75.5812">
+        <meta name="ICBM" content="6.2442, -75.5812">
         
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://rubicon-prog.com/">
-        <meta property="og:title" content="Rubicon | Soluciones Empresariales para Automatización y Eficiencia">
-        <meta property="og:description" content="Expertos en consolidación de flujos de caja, gestión de inventarios y automatización de procesos para medianas y grandes empresas.">
+        <meta property="og:title" content="Rubicon Medellín | Soluciones Empresariales en Colombia">
+        <meta property="og:description" content="Empresa de tecnología en Medellín especializada en automatización, flujos de caja y gestión de inventarios para empresas en Colombia.">
         <meta property="og:image" content="https://rubicon-prog.com/images/og-image.jpg">
+        <meta property="og:locale" content="es_CO">
         
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://rubicon-prog.com/">
-        <meta property="twitter:title" content="Rubicon | Transformación Digital para Empresas">
-        <meta property="twitter:description" content="Soluciones tecnológicas para optimizar procesos empresariales, flujos de caja y gestión de inventarios con sistemas QR y automatización.">
+        <meta property="twitter:title" content="Rubicon Medellín | Transformación Digital Colombia">
+        <meta property="twitter:description" content="Soluciones tecnológicas en Medellín para optimizar procesos empresariales. Expertos en automatización y gestión empresarial en Colombia.">
         <meta property="twitter:image" content="https://rubicon-prog.com/images/og-image.jpg">
         
         <!-- Canonical URL -->
@@ -34,7 +39,6 @@
         
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('img/apple.ico') }}">
-
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         
         <!-- Preload critical resources -->
@@ -101,20 +105,90 @@
         }
     </style>
     
-    <!-- Schema.org markup for Google -->
+    <!-- Schema.org markup for Google con información local -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Rubicon Design Studio",
-      "url": "https://rubicon-design.com",
-      "logo": "https://rubicon-design.com/images/logo.png",
-      "description": "Estudio de diseño especializado en interfaces neo-brutalistas",
+      "name": "Rubicon",
+      "alternateName": "Rubicon Medellín",
+      "url": "https://rubicon-prog.com",
+      "logo": "https://rubicon-prog.com/images/logo.png",
+      "description": "Empresa de transformación digital en Medellín, Colombia, especializada en automatización empresarial y optimización de procesos",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "postalCode": "",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.2442,
+        "longitude": -75.5812
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Medellín",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Antioquia",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Colombia"
+            }
+          }
+        }
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 6.2442,
+          "longitude": -75.5812
+        },
+        "geoRadius": "50000"
+      },
+      "services": [
+        "Automatización empresarial",
+        "Gestión de flujos de caja",
+        "Sistemas de inventarios",
+        "Transformación digital",
+        "Optimización de procesos"
+      ],
       "sameAs": [
-        "https://twitter.com/rubicon",
-        "https://instagram.com/rubicon",
-        "https://dribbble.com/rubicon"
+        "https://www.tiktok.com/@rubicon.tech",
+        "https://instagram.com/rubicon.bio"
       ]
+    }
+    </script>
+
+    <!-- Local Business Schema adicional -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://rubicon-prog.com/#business",
+      "name": "Rubicon",
+      "description": "Soluciones inteligentes de automatización empresarial en Medellín",
+      "url": "https://rubicon-prog.com",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "addressCountry": "Colombia"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "6.2442",
+        "longitude": "-75.5812"
+      },
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "priceRange": "$$",
+      "image": "https://rubicon-prog.com/images/og-image.jpg"
     }
     </script>
 </head>
@@ -122,7 +196,7 @@
     mobileMenuOpen: false,
     typewriterText: '',
     fullText: 'RUBICON',
-    typewriterPhase: 'typing', // typing, pausing, deleting, waiting
+    typewriterPhase: 'typing',
     currentIndex: 0,
     init() {
         this.typewriter();
@@ -225,12 +299,14 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-4 border-black pb-8 mb-8">
                 <div class="font-bold text-3xl tracking-tight mb-6 md:mb-0 text-black">RUBICON</div>
-                <!-- <div class="flex flex-col md:flex-row gap-6 md:gap-12">
-                    <a href="#contact" class="font-medium hover:underline decoration-2 underline-offset-4 transition-all duration-300">Contacto</a>
-                </div>-->
+                <!-- Agregar información de ubicación en el footer -->
+                <div class="text-sm text-gray-600">
+                    <p>📍 Medellín, Antioquia - Colombia</p>
+                    <p>Transformación Digital Empresarial</p>
+                </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <p>© {{ date('Y') }} Rubicon. Todos los derechos reservados.</p>
+                <p>© {{ date('Y') }} Rubicon. Todos los derechos reservados. Medellín, Colombia</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
                     <a href="https://www.tiktok.com/@rubicon.tech" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Tiktok profile">Tiktok</a>
                     <a href="https://instagram.com/rubicon.bio" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Instagram profile">Instagram</a>
