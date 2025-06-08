@@ -4,7 +4,7 @@
     showImageModal: false,
     currentProject: null,
     currentImage: null,
-    scrollSpeed: 2,
+    scrollSpeed: 5,
     scrollPaused: false,
     animationId: null,
     direction: 1,
