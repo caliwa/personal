@@ -195,30 +195,52 @@ x-on:scroll.window="!showModal || closeModal()"
                         <span class="italic text-gray-500">(¿Puedes creer que esta pagina está en una Raspberry Pi 5?)</span>
                     </p>
                 </div>
-                <div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
+<div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
                     <div class="absolute inset-0 flex items-center justify-center p-4">
                         <div class="relative w-full h-full max-w-[180px]">
-                            <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
-                                <div class="relative w-12 h-12 sm:w-14 sm:h-14 bg-black rounded-lg rotate-45">
-                                    <div class="absolute inset-1 bg-[#ff0000] rounded-sm"></div>
-                                    <div class="absolute top-1/2 left-1/2 w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full"></div>
+                            <!-- Laptop/Computador -->
+                            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                <div class="relative">
+                                    <!-- Pantalla -->
+                                    <div class="w-16 h-12 sm:w-18 sm:h-14 bg-black rounded-t-lg border-2 border-black">
+                                        <div class="absolute inset-1 bg-white rounded-t-md border border-black"></div>
+                                        <!-- Texto/código en pantalla -->
+                                        <div class="absolute top-2 left-2 right-2 space-y-1">
+                                            <div class="w-full h-0.5 bg-[#ff0000] rounded shadow-sm"></div>
+                                            <div class="w-3/4 h-0.5 bg-black rounded"></div>
+                                            <div class="w-1/2 h-0.5 bg-[#ff0000] rounded shadow-sm"></div>
+                                            <div class="w-5/6 h-0.5 bg-black rounded"></div>
+                                        </div>
+                                        <!-- Punto de encendido -->
+                                        <div class="absolute top-1 right-1 w-1 h-1 bg-[#ff0000] rounded-full animate-pulse"></div>
+                                    </div>
+                                    <!-- Teclado -->
+                                    <div class="w-16 h-3 sm:w-18 sm:h-4 bg-black rounded-b-lg border-2 border-black">
+                                        <div class="absolute inset-x-1 bottom-1 h-1.5 bg-white rounded-b-sm border border-black"></div>
+                                        <!-- Teclas -->
+                                        <div class="absolute bottom-1 left-2 right-2 flex justify-between">
+                                            <div class="w-1 h-0.5 bg-black rounded-sm"></div>
+                                            <div class="w-1 h-0.5 bg-[#ff0000] rounded-sm"></div>
+                                            <div class="w-1 h-0.5 bg-black rounded-sm"></div>
+                                            <div class="w-1 h-0.5 bg-black rounded-sm"></div>
+                                            <div class="w-1 h-0.5 bg-[#ff0000] rounded-sm"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
-                                <div class="relative w-12 h-12 sm:w-14 sm:h-14">
-                                    <div class="absolute top-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#00ff00] border-2 border-black rounded-full"></div>
-                                    <div class="absolute bottom-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ff0000] border-2 border-black rounded-full"></div>
-                                    <div class="absolute top-0 left-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#0000ff] border-2 border-black rounded-full"></div>
-                                    <div class="absolute bottom-0 right-0 w-5 h-5 sm:w-6 sm:h-6 bg-[#ffff00] border-2 border-black rounded-full"></div>
-                                </div>
-                            </div>
-                            <div class="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-3">
-                                <div class="w-8 h-3 bg-black rounded-full"></div>
-                                <div class="w-8 h-3 bg-black rounded-full"></div>
-                            </div>
+                            <!-- Símbolos de programación flotantes con efectos -->
+                            <div class="absolute top-2 left-4 text-white font-bold text-lg animate-pulse drop-shadow-lg" style="text-shadow: 2px 2px 0px black;">&lt;/&gt;</div>
+                            <div class="absolute bottom-2 right-4 text-white font-bold text-lg animate-pulse drop-shadow-lg" style="text-shadow: 2px 2px 0px black; animation-delay: 0.5s;">{}</div>
+                            <div class="absolute top-4 right-2 text-white font-bold text-sm animate-pulse drop-shadow-lg" style="text-shadow: 1px 1px 0px black; animation-delay: 1s;">1001</div>
+                            <div class="absolute bottom-4 left-2 text-black font-bold text-sm bg-white px-1 rounded animate-pulse border border-black" style="animation-delay: 1.5s;">HEX</div>
+                            <!-- Efectos adicionales -->
+                            <div class="absolute top-1 left-1/2 w-2 h-2 bg-white border-2 border-black rounded-full animate-ping"></div>
+                            <div class="absolute bottom-1 right-1 w-1 h-1 bg-[#ff0000] rounded-full animate-pulse"></div>
                         </div>
                     </div>
-                    <div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.05),rgba(0,0,0,0.05)_1px,transparent_1px,transparent_3px)]"></div>
+                    <div class="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)_1px,transparent_1px,transparent_6px)]"></div>
+                    <!-- Borde interior para más profundidad -->
+                    <div class="absolute inset-2 border border-black rounded-sm opacity-20"></div>
                 </div>
             </div>
         </div>
