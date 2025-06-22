@@ -247,28 +247,30 @@
     }
 }">
     <!-- Navigation -->
+    @persist('navbar')
     <nav class="border-b-4 border-red-300/50 py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 bg-white/20 backdrop-blur-md shadow-lg shadow-red-200/20 z-50">
-            <div class="font-bold text-2xl tracking-tight text-black">
-                <span x-text="typewriterText"></span><span class="cursor text-black">|</span>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Inicio</a>
-                <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/pitch" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Edugamer</a>
-                <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Contáctenos</a>
-                <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Demo</a>
-            </div>
-            <div class="md:hidden">
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen" 
-                    class="p-2 border-2 border-red-400 text-red-700 hover:bg-red-400 hover:text-white transition-colors duration-300 rounded backdrop-blur-sm"
-                    aria-label="Toggle menu"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </nav>
+        <div class="font-bold text-2xl tracking-tight text-black">
+            <span x-text="typewriterText"></span><span class="cursor text-black">|</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Inicio</a>
+            <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/pitch" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Edugamer</a>
+            <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Contáctenos</a>
+            <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Demo</a>
+        </div>
+        <div class="md:hidden">
+            <button 
+                @click="mobileMenuOpen = !mobileMenuOpen" 
+                class="p-2 border-2 border-red-400 text-red-700 hover:bg-red-400 hover:text-white transition-colors duration-300 rounded backdrop-blur-sm"
+                aria-label="Toggle menu"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    @endpersist
 
     <!-- Mobile Menu -->
 <div 
