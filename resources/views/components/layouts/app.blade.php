@@ -7,7 +7,7 @@
         <!-- Primary Meta Tags -->
         <title>Rubicon | Soluciones Inteligentes en Medellín, Colombia - Transformación Digital</title>
         <meta name="title" content="Rubicon Medellín | Transformación Digital para Empresas en Colombia">
-        <meta name="description" content="Rubicon en Medellín, Colombia. Especialistas en automatización empresarial, flujos de caja y gestión de inventarios. Soluciones tecnológicas para empresas en Antioquia.">
+        <meta name="description" content="Rubicon Medellín: Automatización empresarial, flujos de caja e inventarios. Soluciones tecnológicas hechas en empresas de Antioquia, Colombia.">
 
         <meta name="robots" content="index, follow">
         <meta name="keywords" content="automatización empresarial Medellín, flujos de caja Colombia, gestión inventarios Antioquia, sistemas QR Medellín, transformación digital Colombia, Rubicon Medellín, optimización procesos empresariales Colombia">
