@@ -1,4 +1,10 @@
-@assets<head>
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ __('messages.pitch_title') }}</title> {{-- Assuming pitch_title from previous context --}}
+    @assets
     <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
@@ -80,22 +86,22 @@
             RUBICON
         </h1>
         <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto animate-fade-in">
-            "La creatividad es la inteligencia divirtiéndose." – Albert Einstein
+            {{ __('messages.quote_slogan') }}
         </p>
         <p class="text-lg mb-8 animate-fade-in">
-            Resido en Medellín, Colombia - Ingeniero Informático
+            {{ __('messages.location_info') }}
         </p>
         <p class="text-lg mb-8 animate-fade-in">
-            Contáctame: 
-            <a href="https://wa.me/+573234542749?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto." class="underline hover:text-blue-600">
+            {{ __('messages.contact_me') }} 
+            <a href="https://wa.me/+573234542749?text={{ urlencode(__('messages.whatsapp_message_template')) }}" class="underline hover:text-blue-600">
                 +57 323 454 2749
             </a> 
         </p>
        <a 
-            href="https://wa.me/+573234542749?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20proyecto." 
+            href="https://wa.me/+573234542749?text={{ urlencode(__('messages.whatsapp_message_template')) }}" 
             class="inline-block px-8 py-4 bg-[#25D366] text-white border-4 border-black font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] animate-slide-in"
         >
-            CONTÁCTAME POR WHATSAPP
+            {{ __('messages.contact_whatsapp_button') }}
         </a>
     </div>
 </div>

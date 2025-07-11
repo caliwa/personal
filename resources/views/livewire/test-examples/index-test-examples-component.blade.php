@@ -1,5 +1,4 @@
 @assets
-<!-- Required external resources -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
@@ -186,7 +185,7 @@
 <div class="pdf-viewer-background">
     <div id="pdf-container">
         <div class="container" id="loading-message">
-            <label class="loading-title">Cargando ...</label>
+            <label class="loading-title">{{ __('messages.loading_message') }}</label>
             <span class="loading-circle sp1">
                 <span class="loading-circle sp2">
                     <span class="loading-circle sp3"></span>
@@ -206,43 +205,42 @@
         <div class="top-bar" id="top-bar" style="display: none;">
             <div class="container-btn">
                 <button class="btn" id="prev">
-                    <i class="fas fa-arrow-circle-left"></i> Anterior
+                    <i class="fas fa-arrow-circle-left"></i> {{ __('messages.previous_page') }}
                 </button>
                 <button class="btn" id="next">
-                    Siguiente <i class="fas fa-arrow-circle-right"></i>
+                    {{ __('messages.next_page') }} <i class="fas fa-arrow-circle-right"></i>
                 </button>
     
                 
-                <!-- Drawing Controls -->
                 <button id="toggleDraw" class="btn"><i class="fas fa-pencil-alt"></i></button>
                 <button id="toggleText" class="btn"><i class="fas fa-font"></i></button>
                 <button id="toggleShapes" class="btn"><i class="fas fa-shapes"></i></button>
                 <select id="shapeType" class="shape-size" style="display: none;">
-                    <option value="rectangle" style="color: black;">Rectángulo</option>
-                    <option value="circle" style="color: black;">Círculo</option>
-                    <option value="arrow" style="color: black;">Flecha</option>
+                    <option value="rectangle" style="color: black;">{{ __('messages.rectangle') }}</option>
+                    <option value="circle" style="color: black;">{{ __('messages.circle') }}</option>
+                    <option value="arrow" style="color: black;">{{ __('messages.arrow') }}</option>
                 </select>
                 <input type="color" id="colorPicker" value="#ff0000" class="color-picker">
                 <select id="brushSize" class="brush-size">
-                    <option value="1" style="color: black;">Fig. 1px</option>
-                    <option value="3" style="color: black;">Fig. 3px</option>
-                    <option value="5" style="color: black;">Fig. 5px</option>
-                    <option value="8" style="color: black;">Fig. 8px</option>
+                    <option value="1" style="color: black;">{{ __('messages.fig_px', ['size' => 1]) }}</option>
+                    <option value="3" style="color: black;">{{ __('messages.fig_px', ['size' => 3]) }}</option>
+                    <option value="5" style="color: black;">{{ __('messages.fig_px', ['size' => 5]) }}</option>
+                    <option value="8" style="color: black;">{{ __('messages.fig_px', ['size' => 8]) }}</option>
                 </select>
                 <select id="fontSize" class="font-size">
-                    <option value="12" style="color: black;">Trazo 12px</option>
-                    <option value="16" style="color: black;">Trazo 16px</option>
-                    <option value="20" style="color: black;">Trazo 20px</option>
-                    <option value="24" style="color: black;">Trazo 24px</option>
+                    <option value="12" style="color: black;">{{ __('messages.stroke_px', ['size' => 12]) }}</option>
+                    <option value="16" style="color: black;">{{ __('messages.stroke_px', ['size' => 16]) }}</option>
+                    <option value="20" style="color: black;">{{ __('messages.stroke_px', ['size' => 20]) }}</option>
+                    <option value="24" style="color: black;">{{ __('messages.stroke_px', ['size' => 24]) }}</option>
                 </select>
                 <button id="clearCanvas" class="btn"><i class="fas fa-eraser"></i></button>
                 <button id="undoBtn" class="btn"><i class="fas fa-undo"></i></button>
                 <button id="downloadPdf" class="btn">
-                    <i class="fas fa-download"></i>Guardar PDF
+                    <i class="fas fa-download"></i>{{ __('messages.save_pdf') }}
                 </button>
             </div>
             <div class="page-info">
-                Página <input type="number" id="page_num_input" value="1" min="1"/> de <span id="page_count"></span>
+                {{ __('messages.page_of') }} <input type="number" id="page_num_input" value="1" min="1"/> de <span id="page_count"></span>
             </div>
         </div>
     </div>
@@ -250,6 +248,27 @@
     @script
     <script>
         document.addEventListener("livewire:initialized", function() {
+            // Get translations from Blade for use in JS
+            const translations = {
+                loadingMessage: "{{ __('messages.loading_message') }}",
+                previousPage: "{{ __('messages.previous_page') }}",
+                nextPage: "{{ __('messages.next_page') }}",
+                pageOf: "{{ __('messages.page_of') }}",
+                invalidPageNumber: "{{ __('messages.invalid_page_number', ['total_pages' => ':total_pages']) }}",
+                figPx: "{{ __('messages.fig_px', ['size' => ':size']) }}",
+                strokePx: "{{ __('messages.stroke_px', ['size' => ':size']) }}",
+                savePdf: "{{ __('messages.save_pdf') }}",
+                processing: "{{ __('messages.processing') }}",
+                errorLoadingPage: "{{ __('messages.error_loading_page', ['page_num' => ':page_num']) }}",
+                errorLoadingPdf: "{{ __('messages.error_loading_pdf') }}",
+                maxImagesReached: "{{ __('messages.max_images_reached') }}",
+                attachImage: "{{ __('messages.attach_image') }}",
+                selectImageMode: "{{ __('messages.select_image_mode') }}",
+                deactivateSelectImageMode: "{{ __('messages.deactivate_select_image_mode') }}",
+                max2ImagesPerSheet: "{{ __('messages.max_2_images_per_sheet') }}"
+            };
+
+
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
 
             function base64ToUint8Array(base64) {
@@ -284,6 +303,8 @@
             const brushSize = document.getElementById('brushSize');
             const fontSize = document.getElementById('fontSize');
             const clearCanvasBtn = document.getElementById('clearCanvas');
+            const undoBtn = document.getElementById('undoBtn'); // Ensure undoBtn is defined here
+
 
             const imageCanvas = document.createElement('canvas');
 imageCanvas.id = 'image_canvas';
@@ -319,13 +340,13 @@ dropdownMenu.style.minWidth = '150px';
 
 const option2 = document.createElement('button');
 option2.className = 'dropdown-option';
-option2.innerHTML = 'Modo selección imagen';
+option2.innerHTML = translations.selectImageMode; // Translated
 option2.onclick = function() {
     isImageMode = !isImageMode;
     if(isImageMode){
-        option2.innerHTML = 'Desactivar modo selección imagen';
+        option2.innerHTML = translations.deactivateSelectImageMode; // Translated
     }else{
-        option2.innerHTML = 'Modo selección imagen';
+        option2.innerHTML = translations.selectImageMode; // Translated
         const images = imageHistory.get(pageNum) || [];
 
         images.forEach(img => {
@@ -351,16 +372,16 @@ option2.onclick = function() {
 // Create the dropdown options
 const option1 = document.createElement('button');
 option1.className = 'dropdown-option';
-option1.innerHTML = 'Adjuntar imagen';
+option1.innerHTML = translations.attachImage; // Translated
 option1.onclick = function(e) {
     const currentPageImages = imageHistory.get(pageNum) || [];
     if (currentPageImages.length >= 2) {
         option1.style.opacity = 0.5;
-        option1.innerHTML = 'Máximo 2 imagenes por hoja';
+        option1.innerHTML = translations.max2ImagesPerSheet; // Translated
         e.preventDefault();
         return;
     }
-    option1.innerHTML = 'Adjuntar imagen';
+    option1.innerHTML = translations.attachImage; // Translated
     option1.style.opacity = 1; 
 
     isImageMode = true;
@@ -368,7 +389,7 @@ option1.onclick = function(e) {
     isTextMode = false;
     isShapeMode = false;
     
-    option2.innerHTML = 'Desactivar modo selección imagen';
+    option2.innerHTML = translations.deactivateSelectImageMode; // Translated
 
     imageCanvas.style.pointerEvents = isImageMode ? 'auto' : 'none';
     drawingCanvas.style.pointerEvents = 'none';
@@ -510,15 +531,18 @@ const imageCtx = imageCanvas.getContext('2d');
             initializeDrawingContext();
             loadAnnotations();
         }).catch(function(error) {
-            console.error('Error rendering page:', error);
+            console.error(translations.errorLoadingPage.replace(':page_num', num), error); // Translated error
             pageRendering = false;
+            document.getElementById('loading-message').style.display = 'none';
+            document.getElementById('pdf-container').innerHTML = 
+                `<div class="error">${translations.errorLoadingPage.replace(':page_num', num)}: ${error.message}</div>`; // Translated error
         });
     }).catch(function(error) {
-        console.error('Error getting page:', error);
+        console.error(translations.errorLoadingPage.replace(':page_num', num), error); // Translated error
         pageRendering = false;
         document.getElementById('loading-message').style.display = 'none';
         document.getElementById('pdf-container').innerHTML = 
-            `<div class="error">Error al cargar la página ${num}: ${error.message}</div>`;
+            `<div class="error">${translations.errorLoadingPage.replace(':page_num', num)}: ${error.message}</div>`; // Translated error
     });
 
     document.getElementById('page_num_input').value = num;
@@ -547,7 +571,7 @@ fileInput.addEventListener('change', (e) => {
     if (e.target.files && e.target.files[0]) {
         const currentPageImages = imageHistory.get(pageNum) || [];
         if (currentPageImages.length >= 2) {
-            alert('Máximo 2 imágenes por página');
+            alert(translations.maxImagesReached); // Translated alert
             return;
         }
 
@@ -771,7 +795,7 @@ function redrawImages() {
         const images = imageHistory.get(pageNum);
         if (images.length >= 2) {
             // Optional: Add a visual indicator or log
-            console.warn('Límite de imágenes alcanzado (2 por página)');
+            console.warn(translations.maxImagesReached); // Translated warning
         }
 
         images.forEach(img => {
@@ -820,30 +844,32 @@ function redrawImages() {
     isTextMode = !isTextMode;
     isDrawMode = false;
     isShapeMode = false;
-    textCanvas.style.pointerEvents = isTextMode ? 'auto' : 'none';
+    imageModeOff(); // Ensure image mode is off
     drawingCanvas.style.pointerEvents = 'none';
+    textCanvas.style.pointerEvents = isTextMode ? 'auto' : 'none';
     toggleTextBtn.classList.toggle('text-active');
-    imageBtn.classList.remove('image-active');
     toggleDrawBtn.classList.remove('drawing-active');
     toggleShapesBtn.classList.remove('shapes-active');
     textInput.style.display = 'none';
     shapeTypeSelect.style.display = 'none';
-
-    const images = imageHistory.get(pageNum) || [];
-
-    images.forEach(img => {
-        imageCtx.save();
-        img.noStroke(imageCtx);
-        imageCtx.restore();
-    });
-
-    isDragging = false;
-    isImageMode = false;
-    imageCanvas.style.pointerEvents = 'none';
-    images.forEach(img => img.selected = false);
-    option2.innerHTML = 'Modo selección imagen';
-
 });
+
+function imageModeOff() {
+    isImageMode = false;
+    isDragging = false;
+    selectedImage = null;
+    imageCanvas.style.pointerEvents = 'none';
+    imageBtn.classList.remove('image-active');
+    const images = imageHistory.get(pageNum) || [];
+    images.forEach(img => img.selected = false);
+    images.forEach(img => {
+            imageCtx.save();
+            img.noStroke(imageCtx);
+            imageCtx.restore();
+        });
+    option2.innerHTML = translations.selectImageMode; // Translated
+}
+
 
 // Agregar después de la definición de textInput
 function autoResizeTextInput() {
@@ -912,7 +938,7 @@ document.addEventListener('keydown', function(event) {
         undo();
     }
     if (event.key === 'Escape') {
-        imageBtn.classList.remove('image-active');
+        imageModeOff();
         toggleTextBtn.classList.remove('text-active');
         toggleShapesBtn.classList.remove('shapes-active');
         toggleDrawBtn.classList.remove('drawing-active');
@@ -1081,7 +1107,7 @@ function undo() {
     saveAnnotations();
     const currentPageImages = imageHistory.get(pageNum) || [];
     if (currentPageImages.length < 2) {
-        option1.innerHTML = 'Adjuntar imagen';
+        option1.innerHTML = translations.attachImage; // Translated
         option1.style.opacity = 1; 
     }
 }
@@ -1099,30 +1125,14 @@ toggleDrawBtn.addEventListener('click', () => {
     isDrawMode = !isDrawMode;
     isTextMode = false;
     isShapeMode = false;
+    imageModeOff(); // Ensure image mode is off
     drawingCanvas.style.pointerEvents = isDrawMode ? 'auto' : 'none';
     textCanvas.style.pointerEvents = 'none';
     toggleDrawBtn.classList.toggle('drawing-active');
-    imageBtn.classList.remove('image-active');
     toggleTextBtn.classList.remove('text-active');
     toggleShapesBtn.classList.remove('shapes-active');
     textInput.style.display = 'none';
     shapeTypeSelect.style.display = 'none';
-
-    isDragging = false;
-    isImageMode = false;
-    imageCanvas.style.pointerEvents = 'none';
-    const images = imageHistory.get(pageNum) || [];
-        
-    images.forEach(img => img.selected = false);
-    images.forEach(img => {
-            imageCtx.save();
-            img.noStroke(imageCtx);
-            imageCtx.restore();
-        });
-
-    option2.innerHTML = 'Modo selección imagen';
-
-
 });
 
 // Modificar las funciones de dibujo para usar la escala correcta
@@ -1347,7 +1357,7 @@ clearCanvasBtn.addEventListener('click', () => {
     undoStack.set(pageNum, []); // Limpiar el historial de deshacer
     const currentPageImages = imageHistory.get(pageNum) || [];
     if (currentPageImages.length < 2) {
-        option1.innerHTML = 'Adjuntar imagen';
+        option1.innerHTML = translations.attachImage; // Translated
         option1.style.opacity = 1;
     }
 });
@@ -1363,24 +1373,7 @@ clearCanvasBtn.addEventListener('click', () => {
             }
 
             function onPrevPage() {
-                option1.innerHTML = 'Adjuntar imagen';
-                option1.style.opacity = 1;
-                isDragging = false;
-                isImageMode = false;
-                isDrawMode = false;
-                isTextMode = false;
-                isShapeMode = false;
-                selectedImage = null;
-                const images = imageHistory.get(pageNum) || [];
-                images.forEach(img => img.selected = false);
-                imageCanvas.style.pointerEvents = 'none';
-                drawingCanvas.style.pointerEvents = 'none';
-                textCanvas.style.pointerEvents = 'none';
-                toggleTextBtn.classList.remove('text-active');
-                toggleShapesBtn.classList.remove('shapes-active');
-                toggleDrawBtn.classList.remove('drawing-active');
-                imageBtn.classList.remove('image-active');
-                option2.innerHTML = 'Modo selección imagen';
+                imageModeOff();
                 if (pageNum <= 1) return;
                 pageNum--;
                 queueRenderPage(pageNum);
@@ -1388,24 +1381,7 @@ clearCanvasBtn.addEventListener('click', () => {
             }
 
             function onNextPage() {
-                option1.innerHTML = 'Adjuntar imagen';
-                option1.style.opacity = 1;
-                isDragging = false;
-                isImageMode = false;
-                isDrawMode = false;
-                isTextMode = false;
-                isShapeMode = false;
-                selectedImage = null;
-                const images = imageHistory.get(pageNum) || [];
-                images.forEach(img => img.selected = false);
-                imageCanvas.style.pointerEvents = 'none';
-                drawingCanvas.style.pointerEvents = 'none';
-                textCanvas.style.pointerEvents = 'none';
-                toggleTextBtn.classList.remove('text-active');
-                toggleShapesBtn.classList.remove('shapes-active');
-                toggleDrawBtn.classList.remove('drawing-active');
-                imageBtn.classList.remove('image-active');
-                option2.innerHTML = 'Modo selección imagen';
+                imageModeOff();
                 if (pageNum >= pdfDoc.numPages) return;
                 pageNum++;
                 queueRenderPage(pageNum);
@@ -1420,7 +1396,7 @@ clearCanvasBtn.addEventListener('click', () => {
                         pageNum = inputPageNum;
                         queueRenderPage(pageNum);
                     } else {
-                        alert(`Por favor, ingrese un número de página válido (1 - ${pdfDoc.numPages}).`);
+                        alert(translations.invalidPageNumber.replace(':total_pages', pdfDoc.numPages)); // Translated alert
                     }
                 }
             });
@@ -1457,10 +1433,10 @@ clearCanvasBtn.addEventListener('click', () => {
             setTimeout(() => renderPage(pageNum), 100);
         })
         .catch((error) => {
-            console.error('Error loading PDF:', error);
+            console.error(translations.errorLoadingPdf, error); // Translated error
             document.getElementById('loading-message').style.display = 'none';
             document.getElementById('pdf-container').innerHTML = 
-                `<div class="error">Error al cargar el PDF: ${error.message}</div>`;
+                `<div class="error">${translations.errorLoadingPdf}: ${error.message}</div>`; // Translated error
         });
 }
 
@@ -1476,7 +1452,7 @@ clearCanvasBtn.addEventListener('click', () => {
             downloadBtn.addEventListener('click', async () => {
     try {
         downloadBtn.disabled = true;
-        downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+        downloadBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${translations.processing}`; // Translated processing message
 
         saveAnnotations();
 
@@ -1543,7 +1519,7 @@ clearCanvasBtn.addEventListener('click', () => {
         console.error('Error downloading PDF:', error);
     } finally {
         downloadBtn.disabled = false;
-        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Guardar PDF';
+        downloadBtn.innerHTML = `<i class="fas fa-download"></i> ${translations.savePdf}`; // Translated save button
     }
 });
 
@@ -1665,28 +1641,14 @@ toggleShapesBtn.addEventListener('click', () => {
     isShapeMode = !isShapeMode;
     isDrawMode = false;
     isTextMode = false;
+    imageModeOff(); // Ensure image mode is off
     drawingCanvas.style.pointerEvents = isShapeMode ? 'auto' : 'none';
     textCanvas.style.pointerEvents = 'none';
     toggleShapesBtn.classList.toggle('shapes-active');
-    imageBtn.classList.remove('image-active');
     toggleDrawBtn.classList.remove('drawing-active');
     toggleTextBtn.classList.remove('text-active');
     shapeTypeSelect.style.display = isShapeMode ? 'inline-block' : 'none';
     textInput.style.display = 'none';
-
-    isDragging = false;
-    isImageMode = false;
-    imageCanvas.style.pointerEvents = 'none';
-    const images = imageHistory.get(pageNum) || [];
-    images.forEach(img => img.selected = false);
-    images.forEach(img => {
-        imageCtx.save();
-        img.noStroke(imageCtx);
-        imageCtx.restore();
-    });
-
-    option2.innerHTML = 'Modo selección imagen';
-
 });
                 
 function redrawFromUndoStack() {

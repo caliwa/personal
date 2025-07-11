@@ -4,48 +4,41 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <!-- Primary Meta Tags -->
-        <title>Rubicon | Soluciones Inteligentes en Medellín, Colombia - Transformación Digital</title>
-        <meta name="title" content="Rubicon Medellín | Transformación Digital para Empresas en Colombia">
-        <meta name="description" content="Rubicon Medellín: Automatización empresarial, flujos de caja e inventarios. Soluciones tecnológicas hechas en empresas de Antioquia, Colombia.">
+        <title>{{ __('messages.meta_title_main') }}</title>
+        <meta name="title" content="{{ __('messages.meta_title_main') }}">
+        <meta name="description" content="{{ __('messages.meta_description_main') }}">
 
         <meta name="robots" content="index, follow">
-        <meta name="keywords" content="automatización empresarial Medellín, flujos de caja Colombia, gestión inventarios Antioquia, sistemas QR Medellín, transformación digital Colombia, Rubicon Medellín, optimización procesos empresariales Colombia">
-        <meta name="author" content="Rubicon Carlos González">
+        <meta name="keywords" content="{{ __('messages.meta_keywords_main') }}">
+        <meta name="author" content="{{ __('messages.meta_author_main') }}">
         <meta name="geo.region" content="CO-ANT">
         <meta name="geo.placename" content="Medellín">
         <meta name="geo.position" content="6.2442;-75.5812">
         <meta name="ICBM" content="6.2442, -75.5812">
         
-        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://rubicon-prog.com/">
-        <meta property="og:title" content="Rubicon Medellín | Soluciones Empresariales en Colombia">
-        <meta property="og:description" content="Empresa de tecnología en Medellín especializada en automatización, flujos de caja y gestión de inventarios para empresas en Colombia.">
+        <meta property="og:title" content="{{ __('messages.og_title_main') }}">
+        <meta property="og:description" content="{{ __('messages.og_description_main') }}">
         <meta property="og:image" content="https://rubicon-prog.com/images/og-image.jpg">
-        <meta property="og:locale" content="es_CO">
+        <meta property="og:locale" content="{{ app()->getLocale() == 'es' ? 'es_CO' : 'en_US' }}"> {{-- Dynamic locale --}}
         
-        <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://rubicon-prog.com/">
-        <meta property="twitter:title" content="Rubicon Medellín | Transformación Digital Colombia">
-        <meta property="twitter:description" content="Soluciones tecnológicas en Medellín para optimizar procesos empresariales. Expertos en automatización y gestión empresarial en Colombia.">
+        <meta property="twitter:title" content="{{ __('messages.twitter_title_main') }}">
+        <meta property="twitter:description" content="{{ __('messages.twitter_description_main') }}">
         <meta property="twitter:image" content="https://rubicon-prog.com/images/og-image.jpg">
         
-        <!-- Canonical URL -->
         <link rel="canonical" href="https://rubicon-prog.com/">
 
         <meta name="theme-color" content="#000000">
         
-        <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('img/apple.ico') }}">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         
-        <!-- Preload critical resources -->
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"></noscript>
         @livewireStyles
-    <!-- CSS -->
     @vite(['resources/js/app.js', 'resources/css/app.css'])
     <style>
         body {
@@ -105,7 +98,6 @@
         }
     </style>
     
-    <!-- Schema.org markup for Google con información local -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -114,7 +106,7 @@
       "alternateName": "Rubicon Medellín",
       "url": "https://rubicon-prog.com",
       "logo": "https://rubicon-prog.com/images/logo.png",
-      "description": "Empresa de transformación digital en Medellín, Colombia, especializada en automatización empresarial y optimización de procesos",
+      "description": "{{ __('messages.schema_org_description') }}",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "",
@@ -151,13 +143,7 @@
         },
         "geoRadius": "50000"
       },
-      "services": [
-        "Automatización empresarial",
-        "Gestión de flujos de caja",
-        "Sistemas de inventarios",
-        "Transformación digital",
-        "Optimización de procesos"
-      ],
+      "services": {!! json_encode(__('messages.services_list')) !!}, {{-- Use json_encode for arrays --}}
       "sameAs": [
         "https://www.tiktok.com/@rubicon.tech",
         "https://instagram.com/rubicon.bio"
@@ -165,14 +151,13 @@
     }
     </script>
 
-    <!-- Local Business Schema adicional -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": "https://rubicon-prog.com/#business",
       "name": "Rubicon",
-      "description": "Soluciones inteligentes de automatización empresarial en Medellín",
+      "description": "{{ __('messages.local_business_description') }}",
       "url": "https://rubicon-prog.com",
       "telephone": "",
       "address": {
@@ -246,17 +231,16 @@
         });
     }
 }">
-    <!-- Navigation -->
     @persist('navbar')
     <nav class="border-b-4 border-red-300/50 py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 bg-white/20 backdrop-blur-md shadow-lg shadow-red-200/20 z-50">
         <div class="font-bold text-2xl tracking-tight text-black">
             <span x-text="typewriterText"></span><span class="cursor text-black">|</span>
         </div>
         <div class="hidden md:flex space-x-8">
-            <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Inicio</a>
-            <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/pitch" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Edugamer</a>
-            <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Contáctenos</a>
-            <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">Demo</a>
+            <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">{{ __('messages.nav_home') }}</a>
+            <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/pitch" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">{{ __('messages.nav_edugamer') }}</a>
+            <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">{{ __('messages.nav_contact_us') }}</a>
+            <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium text-black hover:text-red-900 hover:underline decoration-4 decoration-red-400 underline-offset-8 transition-all duration-300">{{ __('messages.nav_demo') }}</a>
         </div>
         <div class="md:hidden">
             <button 
@@ -272,8 +256,7 @@
     </nav>
     @endpersist
 
-    <!-- Mobile Menu -->
-<div 
+    <div 
     x-show="mobileMenuOpen" 
     x-transition:enter="transition ease-out duration-300"
     x-transition:enter-start="opacity-0 transform -translate-y-10"
@@ -285,10 +268,10 @@
     aria-hidden="true"
 >
     <div class="flex flex-col py-4 px-6">
-        <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Inicio</a>
-        <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/pitch" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Edugamer</a>
-        <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Contáctenos</a>
-        <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">Demo</a>
+        <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">{{ __('messages.nav_home') }}</a>
+        <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/pitch" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">{{ __('messages.nav_edugamer') }}</a>
+        <a wire:navigate wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/contactanos"  class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">{{ __('messages.nav_contact_us') }}</a>
+        <a wire:current.exact='pointer-events-none decoration-4 decoration-red-400 text-red-900' href="/demo" class="font-medium py-3 border-b border-gray-200 hover:bg-gray-100 px-2">{{ __('messages.nav_demo') }}</a>
     </div>
 </div>
 
@@ -296,22 +279,20 @@
         {{ $slot }}
     </body>
 
-    <!-- Footer -->
     <footer class="py-12 px-6 md:px-12">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-4 border-black pb-8 mb-8">
                 <div class="font-bold text-3xl tracking-tight mb-6 md:mb-0 text-black">RUBICON</div>
-                <!-- Agregar información de ubicación en el footer -->
                 <div class="text-sm text-gray-600">
-                    <p>📍 Medellín, Antioquia - Colombia</p>
-                    <p>Transformación Digital Empresarial</p>
+                    <p>{{ __('messages.footer_location') }}</p>
+                    <p>{{ __('messages.footer_tagline') }}</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <p>© {{ date('Y') }} Rubicon. Todos los derechos reservados. Medellín, Colombia</p>
+                <p>© {{ date('Y') }} Rubicon. {{ __('messages.footer_copyright') }}</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="https://www.tiktok.com/@rubicon.tech" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Tiktok profile">Tiktok</a>
-                    <a href="https://instagram.com/rubicon.bio" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="Instagram profile">Instagram</a>
+                    <a href="https://www.tiktok.com/@rubicon.tech" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="{{ __('messages.footer_tiktok') }}">Tiktok</a>
+                    <a href="https://instagram.com/rubicon.bio" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="{{ __('messages.footer_instagram') }}">Instagram</a>
                 </div>
             </div>
         </div>

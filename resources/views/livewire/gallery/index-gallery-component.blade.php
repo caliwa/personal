@@ -1,186 +1,194 @@
-<div x-data="{
-    activeCategory: 'all',
-    showModal: false,
-    showImageModal: false,
-    currentProject: null,
-    currentImage: null,
-    scrollSpeed: 5,
-    scrollPaused: false,
-    animationId: null,
-    direction: 1,
-    projects: [
-        {
-            id: 1,
-            title: 'Cotizador Doblamos',
-            category: 'arquitectura',
-            description: 'Cotizador para figuras de acero estándar y servicios',
-            challenge: 'Desarrollar una plataforma intuitiva que permita a los usuarios cotizar estructuras de acero de manera rápida y precisa.',
-            image: '/img/archivosrubicon/cot1.png',
-            gallery: [
+@php
+    $projects = [
+        [
+            'id' => 1,
+            'title' => __('messages.project_1_title'),
+            'category' => __('messages.project_categories.arquitectura'), // Translated category
+            'raw_category' => 'arquitectura', // Keep raw category for styling
+            'description' => __('messages.project_1_description'),
+            'challenge' => __('messages.project_1_challenge'),
+            'image' => '/img/archivosrubicon/cot1.png',
+            'gallery' => [
                 '/img/archivosrubicon/cot1.png',
                 '/img/archivosrubicon/cot2.png',
                 '/img/archivosrubicon/cot3.png',
                 '/img/archivosrubicon/cot4.png'
             ],
-            client: 'Doblamos S.A.S',
-            year: '2025'
-        },
-        {
-            id: 2,
-            title: 'GTT - Tecnoal',
-            category: 'digital',
-            description: 'Plataforma de gestión de usuarios.',
-            challenge: 'Crear una interfaz de usuario intuitiva y un sistema de backend robusto para gestionar usuarios y sus datos de manera eficiente.',
-            image: '/img/archivosrubicon/gtt4.png',
-            gallery: [
+            'client' => 'Doblamos S.A.S',
+            'year' => '2025'
+        ],
+        [
+            'id' => 2,
+            'title' => __('messages.project_2_title'),
+            'category' => __('messages.project_categories.digital'),
+            'raw_category' => 'digital',
+            'description' => __('messages.project_2_description'),
+            'challenge' => __('messages.project_2_challenge'),
+            'image' => '/img/archivosrubicon/gtt4.png',
+            'gallery' => [
                 '/img/archivosrubicon/gtt1.png',
                 '/img/archivosrubicon/gtt2.png',
                 '/img/archivosrubicon/gtt3.png'
             ],
-            client: 'Tecnoal S.A.S',
-            year: '2024'
-        },
-        {
-            id: 3,
-            title: 'Ideas en línea Chatbot',
-            category: 'branding',
-            description: 'Identidad visual para diversos nichos de mercado.',
-            challenge: 'Automatizar la atención al cliente mediante un chatbot que pueda responder preguntas frecuentes y guiar a los usuarios en sus compras.',
-            image: '/img/archivosrubicon/ideas3.png',
-            gallery: [
+            'client' => 'Tecnoal S.A.S',
+            'year' => '2024'
+        ],
+        [
+            'id' => 3,
+            'title' => __('messages.project_3_title'),
+            'category' => __('messages.project_categories.branding'),
+            'raw_category' => 'branding',
+            'description' => __('messages.project_3_description'),
+            'challenge' => __('messages.project_3_challenge'),
+            'image' => '/img/archivosrubicon/ideas3.png',
+            'gallery' => [
                 '/img/archivosrubicon/ideas1.jpeg',
                 '/img/archivosrubicon/ideas2.jpeg'
             ],
-            client: 'Ideas en línea',
-            year: '2023'
-        },
-        {
-            id: 4,
-            title: 'PDF Ahorro físico de papel',
-            category: 'editorial',
-            description: 'Creación de aplicación para bocetado y edición de documentos PDF.',
-            challenge: 'Desarrollar una aplicación que permita a los usuarios editar y anotar documentos PDF de manera eficiente, reduciendo el uso de papel.',
-            image: '/img/archivosrubicon/dob1.png',
-            gallery: [
+            'client' => 'Ideas en línea',
+            'year' => '2023'
+        ],
+        [
+            'id' => 4,
+            'title' => __('messages.project_4_title'),
+            'category' => __('messages.project_categories.editorial'),
+            'raw_category' => 'editorial',
+            'description' => __('messages.project_4_description'),
+            'challenge' => __('messages.project_4_challenge'),
+            'image' => '/img/archivosrubicon/dob1.png',
+            'gallery' => [
                 '/img/archivosrubicon/dob2.png'
             ],
-            client: 'Doblamos S.A.S',
-            year: '2024'
-        },
-        {
-            id: 5,
-            title: 'Videojuego multiplataforma educativo',
-            category: 'digital',
-            description: 'Juego de aventuras para aprender sobre emprendimiento y finanzas.',
-            challenge: 'Diseñar y desarrollar un videojuego interactivo que enseñe conceptos de emprendimiento y finanzas a través de una narrativa atractiva.',
-            image: '/img/archivosrubicon/kaplayjs.png',
-            gallery: [
+            'client' => 'Doblamos S.A.S',
+            'year' => '2024'
+        ],
+        [
+            'id' => 5,
+            'title' => __('messages.project_5_title'),
+            'category' => __('messages.project_categories.digital'),
+            'raw_category' => 'digital',
+            'description' => __('messages.project_5_description'),
+            'challenge' => __('messages.project_5_challenge'),
+            'image' => '/img/archivosrubicon/kaplayjs.png',
+            'gallery' => [
                 '/img/archivosrubicon/sonic4.png',
                 '/img/archivosrubicon/kaplayjs2.png',
                 '/img/archivosrubicon/kaplayjs3.jpg'
             ],
-            client: 'Politécnico Colombiano JIC',
-            year: '2025'
-        },
-        {
-            id: 6,
-            title: 'Cervecerías y cócteles',
-            category: 'digital',
-            description: 'Sistema de analytics para cervecerías y bares.',
-            challenge: 'Desarrollar un sistema de análisis de datos que permita a los propietarios de cervecerías y bares entender mejor el comportamiento de sus clientes y optimizar sus operaciones.',
-            image: '/img/archivosrubicon/py2.png',
-            gallery: [
+            'client' => 'Politécnico Colombiano JIC',
+            'year' => '2025'
+        ],
+        [
+            'id' => 6,
+            'title' => __('messages.project_6_title'),
+            'category' => __('messages.project_categories.digital'),
+            'raw_category' => 'digital',
+            'description' => __('messages.project_6_description'),
+            'challenge' => __('messages.project_6_challenge'),
+            'image' => '/img/archivosrubicon/py2.png',
+            'gallery' => [
                 '/img/archivosrubicon/py1.png',
                 '/img/archivosrubicon/py3.png',
                 '/img/archivosrubicon/py4.png'
             ],
-            client: 'La Forja',
-            year: '2024'
-        }
-    ],
-    initGallery() {
-        const gallery = this.$refs.infiniteGallery;
-        const galleryContent = this.$refs.galleryContent;
-        
-        if (!gallery || !galleryContent) return;
-        
-        galleryContent.innerHTML += galleryContent.innerHTML;
-        
-        const scrollGallery = () => {
-            if (!gallery) return;
+            'client' => 'La Forja',
+            'year' => '2024'
+        ]
+    ];
+@endphp
+<div x-data="{
+        activeCategory: 'all',
+        showModal: false,
+        showImageModal: false,
+        currentProject: null,
+        currentImage: null,
+        scrollSpeed: 5,
+        scrollPaused: false,
+        animationId: null,
+        direction: 1,
+        projects: {{ json_encode($projects) }}, // Pass the PHP array as JSON
+        initGallery() {
+            const gallery = this.$refs.infiniteGallery;
+            const galleryContent = this.$refs.galleryContent;
             
-            const contentWidth = galleryContent.scrollWidth / 2;
+            if (!gallery || !galleryContent) return;
             
-            if (gallery.scrollLeft >= contentWidth) {
-                gallery.scrollLeft -= contentWidth;
-            }
+            galleryContent.innerHTML += galleryContent.innerHTML;
             
-            if (!this.scrollPaused) {
-                gallery.scrollLeft += this.scrollSpeed * this.direction;
-            }
+            const scrollGallery = () => {
+                if (!gallery) return;
+                
+                const contentWidth = galleryContent.scrollWidth / 2;
+                
+                if (gallery.scrollLeft >= contentWidth) {
+                    gallery.scrollLeft -= contentWidth;
+                }
+                
+                if (!this.scrollPaused) {
+                    gallery.scrollLeft += this.scrollSpeed * this.direction;
+                }
+                
+                this.animationId = requestAnimationFrame(scrollGallery);
+            };
             
-            this.animationId = requestAnimationFrame(scrollGallery);
-        };
-        
-        scrollGallery();
-        
-        gallery.addEventListener('mouseenter', () => {
-            this.scrollPaused = true;
-        });
-        
-        gallery.addEventListener('mouseleave', () => {
-            this.scrollPaused = false;
-        });
-    },
-    openModal(project) {
-        this.currentProject = project;
-        this.showModal = true;
-        document.body.style.overflow = 'hidden';
-        
-        this.$nextTick(() => {
+            scrollGallery();
+            
+            gallery.addEventListener('mouseenter', () => {
+                this.scrollPaused = true;
+            });
+            
+            gallery.addEventListener('mouseleave', () => {
+                this.scrollPaused = false;
+            });
+        },
+        openModal(project) {
+            this.currentProject = project;
+            this.showModal = true;
+            document.body.style.overflow = 'hidden';
+            
+            this.$nextTick(() => {
+                const modalContent = this.$el.querySelector('.fixed.inset-0 .overflow-y-auto');
+                if (modalContent) {
+                    modalContent.scrollTop = 0;
+                }
+            });
+        },
+        closeModal() {
+            this.showModal = false;
+            this.currentProject = null;
+            document.body.style.overflow = 'auto';
+            
             const modalContent = this.$el.querySelector('.fixed.inset-0 .overflow-y-auto');
             if (modalContent) {
                 modalContent.scrollTop = 0;
             }
-        });
-    },
-    closeModal() {
-        this.showModal = false;
-        this.currentProject = null;
-        document.body.style.overflow = 'auto';
-        
-        const modalContent = this.$el.querySelector('.fixed.inset-0 .overflow-y-auto');
-        if (modalContent) {
-            modalContent.scrollTop = 0;
+        },
+        openImageModal(imageUrl) {
+            this.currentImage = imageUrl;
+            this.showImageModal = true;
+        },
+        closeImageModal() {
+            this.showImageModal = false;
+            this.currentImage = null;
+        },
+        reverseScroll() {
+            this.direction = -1;
+        },
+        normalScroll() {
+            this.direction = 1;
         }
-    },
-    openImageModal(imageUrl) {
-        this.currentImage = imageUrl;
-        this.showImageModal = true;
-    },
-    closeImageModal() {
-        this.showImageModal = false;
-        this.currentImage = null;
-    },
-    reverseScroll() {
-        this.direction = -1;
-    },
-    normalScroll() {
-        this.direction = 1;
-    }
-}" 
+    }" 
 x-init="initGallery()"
 x-on:keydown.escape="showImageModal ? closeImageModal() : closeModal()"
 x-on:scroll.window="!showModal || closeModal()"
 >
-    <!-- Hero Section -->
     <section class="relative py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b-4 border-black bg-[#0d0c0a] text-white overflow-hidden">
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="flex flex-col lg:flex-row">
                 <div class="w-full lg:w-1/2 h-full">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight">
-                        <span class="block animate-slide-in" style="animation-delay: 0.1s">EXHIBICIÓN</span>
-                        <span class="block text-[#FF5252] animate-slide-in" style="animation-delay: 0.3s">PORTAFOLIO</span>
+                        <span class="block animate-slide-in" style="animation-delay: 0.1s">{{ __('messages.hero_title_1') }}</span>
+                        <span class="block text-[#FF5252] animate-slide-in" style="animation-delay: 0.3s">{{ __('messages.hero_title_2') }}</span>
                     </h1>
                 </div>
                 <div class="w-full lg:w-1/2 h-full flex justify-center lg:ml-[210px] items-center mt-8">
@@ -191,33 +199,27 @@ x-on:scroll.window="!showModal || closeModal()"
             <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
                 <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
                     <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
-                        Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.<br>
-                        <span class="italic text-gray-500">(¿Puedes creer que esta pagina está en una Raspberry Pi 5?)</span>
+                        {{ __('messages.hero_description_1') }}<br>
+                        <span class="italic text-gray-500">{{ __('messages.hero_description_2') }}</span>
                     </p>
                 </div>
 <div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
                     <div class="absolute inset-0 flex items-center justify-center p-4">
                         <div class="relative w-full h-full max-w-[180px]">
-                            <!-- Laptop/Computador -->
                             <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="relative">
-                                    <!-- Pantalla -->
                                     <div class="w-16 h-12 sm:w-18 sm:h-14 bg-black rounded-t-lg border-2 border-black">
                                         <div class="absolute inset-1 bg-white rounded-t-md border border-black"></div>
-                                        <!-- Texto/código en pantalla -->
                                         <div class="absolute top-2 left-2 right-2 space-y-1">
                                             <div class="w-full h-0.5 bg-[#ff0000] rounded shadow-sm"></div>
                                             <div class="w-3/4 h-0.5 bg-black rounded"></div>
                                             <div class="w-1/2 h-0.5 bg-[#ff0000] rounded shadow-sm"></div>
                                             <div class="w-5/6 h-0.5 bg-black rounded"></div>
                                         </div>
-                                        <!-- Punto de encendido -->
                                         <div class="absolute top-1 right-1 w-1 h-1 bg-[#ff0000] rounded-full animate-pulse"></div>
                                     </div>
-                                    <!-- Teclado -->
                                     <div class="w-16 h-3 sm:w-18 sm:h-4 bg-black rounded-b-lg border-2 border-black">
                                         <div class="absolute inset-x-1 bottom-1 h-1.5 bg-white rounded-b-sm border border-black"></div>
-                                        <!-- Teclas -->
                                         <div class="absolute bottom-1 left-2 right-2 flex justify-between">
                                             <div class="w-1 h-0.5 bg-black rounded-sm"></div>
                                             <div class="w-1 h-0.5 bg-[#ff0000] rounded-sm"></div>
@@ -228,18 +230,15 @@ x-on:scroll.window="!showModal || closeModal()"
                                     </div>
                                 </div>
                             </div>
-                            <!-- Símbolos de programación flotantes con efectos -->
                             <div class="absolute top-2 left-4 text-white font-bold text-lg animate-pulse drop-shadow-lg" style="text-shadow: 2px 2px 0px black;">&lt;/&gt;</div>
                             <div class="absolute bottom-2 right-4 text-white font-bold text-lg animate-pulse drop-shadow-lg" style="text-shadow: 2px 2px 0px black; animation-delay: 0.5s;">{}</div>
                             <div class="absolute top-4 right-2 text-white font-bold text-sm animate-pulse drop-shadow-lg" style="text-shadow: 1px 1px 0px black; animation-delay: 1s;">1001</div>
                             <div class="absolute bottom-4 left-2 text-black font-bold text-sm bg-white px-1 rounded animate-pulse border border-black" style="animation-delay: 1.5s;">HEX</div>
-                            <!-- Efectos adicionales -->
                             <div class="absolute top-1 left-1/2 w-2 h-2 bg-white border-2 border-black rounded-full animate-ping"></div>
                             <div class="absolute bottom-1 right-1 w-1 h-1 bg-[#ff0000] rounded-full animate-pulse"></div>
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)_1px,transparent_1px,transparent_6px)]"></div>
-                    <!-- Borde interior para más profundidad -->
                     <div class="absolute inset-2 border border-black rounded-sm opacity-20"></div>
                 </div>
             </div>
@@ -284,7 +283,7 @@ x-on:scroll.window="!showModal || closeModal()"
                             <h3 class="text-2xl font-bold mb-2" x-text="project.title"></h3>
                             <p class="text-sm mb-4 line-clamp-2" x-text="project.description"></p>
                             <div class="mt-auto font-bold text-xs underline decoration-2 underline-offset-4 group-hover/item:text-[#FF5252] transition-colors">
-                                VER PROYECTO →
+                                {{ __('messages.see_project') }} →
                             </div>
                         </div>
                     </div>
@@ -295,7 +294,6 @@ x-on:scroll.window="!showModal || closeModal()"
         <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
     </section>
 
-    <!-- Project Modal -->
     <div 
         x-show="showModal"
         x-cloak
@@ -349,38 +347,38 @@ x-on:scroll.window="!showModal || closeModal()"
                     </div>
                     <div class="text-right">
                         <div class="text-2xl font-bold" x-text="currentProject?.year"></div>
-                        <div class="text-sm uppercase tracking-widest">Año</div>
+                        <div class="text-sm uppercase tracking-widest">{{ __('messages.year') }}</div>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="md:col-span-2">
-                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">Visión del Proyecto</h3>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">{{ __('messages.project_vision') }}</h3>
                         <p class="mb-6 text-lg leading-relaxed" x-text="currentProject?.description"></p>
                         <div class="bg-gray-100 border-2 border-black p-6">
-                            <h4 class="font-bold mb-2">Reto</h4>
+                            <h4 class="font-bold mb-2">{{ __('messages.challenge') }}</h4>
                             <p x-text="currentProject?.challenge"></p>
                         </div>
                     </div>
                     <div class="border-4 border-black p-6 bg-gray-50">
-                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">Detalles Clave</h3>
+                        <h3 class="text-xl font-bold mb-4 border-b-2 border-black pb-2">{{ __('messages.key_details') }}</h3>
                         <div class="space-y-6">
                             <div>
-                                <div class="font-bold uppercase text-sm tracking-widest">Cliente</div>
+                                <div class="font-bold uppercase text-sm tracking-widest">{{ __('messages.client') }}</div>
                                 <div class="text-lg" x-text="currentProject?.client"></div>
                             </div>
                             <div>
-                                <div class="font-bold uppercase text-sm tracking-widest">Alcance</div>
-                                <div class="text-lg">Diseño y desarrollo completo</div>
+                                <div class="font-bold uppercase text-sm tracking-widest">{{ __('messages.scope') }}</div>
+                                <div class="text-lg">{{ __('messages.full_design_development') }}</div>
                             </div>
                             <div>
-                                <div class="font-bold uppercase text-sm tracking-widest">Duración</div>
-                                <div class="text-lg">6-9 meses</div>
+                                <div class="font-bold uppercase text-sm tracking-widest">{{ __('messages.duration') }}</div>
+                                <div class="text-lg">{{ __('messages.duration_time') }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mb-12" x-show="currentProject?.gallery && currentProject.gallery.length > 0">
-                    <h3 class="text-xl font-bold mb-6 border-b-2 border-black pb-2">Galería del Proyecto</h3>
+                    <h3 class="text-xl font-bold mb-6 border-b-2 border-black pb-2">{{ __('messages.project_gallery') }}</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <template x-for="(imageUrl, index) in currentProject?.gallery" :key="index">
                             <div class="border-2 border-black overflow-hidden h-40 md:h-56 cursor-pointer" @click="openImageModal(imageUrl)">
@@ -388,7 +386,7 @@ x-on:scroll.window="!showModal || closeModal()"
                                     :src="imageUrl" 
                                     :alt="`${currentProject?.title} imagen ${index + 1}`" 
                                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                                    onerror="this.src='https://via.placeholder.com/400x600/cccccc/666666?text=Imagen+no+disponible'"
+                                    onerror="this.src='https://via.placeholder.com/400x600/cccccc/666666?text={{ __('messages.image_not_available') }}'"
                                 >
                             </div>
                         </template>
@@ -402,20 +400,19 @@ x-on:scroll.window="!showModal || closeModal()"
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
                         </svg>
-                        CERRAR
+                        {{ __('messages.close') }}
                     </button>
                     <a 
                         href="#contact" 
                         class="px-8 py-3 border-4 border-black font-bold bg-black text-white hover:bg-[#FF5252] transition-all duration-300 flex items-center gap-2"
                     >
-                        INICIAR TU PROYECTO
+                        {{ __('messages.start_your_project') }}
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Image Zoom Modal -->
     <div 
         x-show="showImageModal"
         x-cloak
@@ -449,7 +446,7 @@ x-on:scroll.window="!showModal || closeModal()"
                     x-bind:src="currentImage" 
                     x-bind:alt="'Zoomed image'"
                     class="w-full h-full object-contain"
-                    onerror="this.src='https://via.placeholder.com/800x600/cccccc/666666?text=Imagen+no+disponible'"
+                    onerror="this.src='https://via.placeholder.com/800x600/cccccc/666666?text={{ __('messages.image_not_available') }}'"
                 >
             </div>
         </div>
@@ -459,9 +456,9 @@ x-on:scroll.window="!showModal || closeModal()"
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 @foreach([
-                    ['count' => 140, 'label' => 'PROYECTOS COMPLETADOS'],
-                    ['count' => 15, 'label' => 'CLIENTES SATISFECHOS'],
-                    ['count' => 5, 'label' => 'AÑOS DE EXPERIENCIA']
+                    ['count' => 140, 'label_key' => 'messages.completed_projects'],
+                    ['count' => 15, 'label_key' => 'messages.satisfied_clients'],
+                    ['count' => 5, 'label_key' => 'messages.years_experience']
                 ] as $index => $counter)
                 <div 
                     class="scroll-animate opacity-0 translate-y-10 transition-all duration-700"
@@ -486,7 +483,7 @@ x-on:scroll.window="!showModal || closeModal()"
                     }"
                 >
                     <div class="text-6xl font-bold mb-2" x-text="count"></div>
-                    <div class="text-xl font-medium">{{ $counter['label'] }}</div>
+                    <div class="text-xl font-medium">{{ __($counter['label_key']) }}</div>
                 </div>
                 @endforeach
             </div>
@@ -496,11 +493,11 @@ x-on:scroll.window="!showModal || closeModal()"
     <section id="contact" class="py-24 px-6 md:px-12 bg-black border-t-4 border-black text-white">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                <span class="block">¿LISTO PARA</span>
-                <span class="block text-[#FFD166]">ELEVAR TU MARCA?</span>
+                <span class="block">{{ __('messages.ready_to_elevate') }}</span>
+                <span class="block text-[#FFD166]">{{ __('messages.elevate_brand') }}</span>
             </h2>
             <p class="text-xl mb-12 max-w-2xl mx-auto">
-                Creemos algo extraordinario juntos. Nuestro equipo está listo para dar vida a tu visión con un diseño audaz e innovador.
+                {{ __('messages.contact_us_message') }}
             </p>
             <div class="flex flex-wrap justify-center gap-6">
                 <a 
@@ -508,13 +505,13 @@ x-on:scroll.window="!showModal || closeModal()"
                     href="/contactanos"
                     class="px-8 py-4 border-4 border-[#FF5252] bg-[#FF5252] text-white font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(255,82,82,0.3)]"
                 >
-                    CONTÁCTANOS
+                    {{ __('messages.contact_us_button') }}
                 </a>
                 <a 
                     href="/demo"
                     class="px-8 py-4 border-4 border-white bg-transparent text-white font-bold text-lg transform transition hover:-translate-y-1 hover:bg-white hover:text-black"
                 >
-                    VER NUESTRO PROCESO
+                    {{ __('messages.see_our_process') }}
                 </a>
             </div>
         </div>

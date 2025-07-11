@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pitch: Aplicación Móvil Educativa</title>
+    <title>{{ __('messages.pitch_title') }}</title>
     <style>
         body {
             font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -213,112 +213,112 @@
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                 </div>
-                <h1>EduGamer App - Rubicon</h1>
-                <p class="subtitle">Portabilizando el Aprendizaje a través de Videojuegos Móviles</p>
-                <p><strong>Medellín, Colombia</strong></p>
+                <h1>{{ __('messages.app_name') }}</h1>
+                <p class="subtitle">{{ __('messages.app_subtitle') }}</p>
+                <p><strong>{{ __('messages.location') }}</strong></p>
             </div>
         </header>
 
         <section class="section">
-            <h2>🎯 El Mercado de los Videojuegos</h2>
+            <h2>{{ __('messages.section_1_title') }}</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">$200B</span>
-                    <p>Ingresos proyectados para 2026</p>
+                    <p>{{ __('messages.projected_revenue') }}</p>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">3.2B</span>
-                    <p>Jugadores activos mundialmente</p>
+                    <p>{{ __('messages.active_players') }}</p>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">230M</span>
-                    <p>Usuarios activos mensuales (Fortnite)</p>
+                    <p>{{ __('messages.monthly_active_users') }}</p>
                 </div>
             </div>
-            <p><strong>Los videojuegos ya dominan el entretenimiento audiovisual, superando a la música y el cine combinados.</strong> Nuestra aplicación aprovecha esta tendencia masiva para revolucionar la educación.</p>
+            <p><strong>{{ __('messages.market_dominance_text') }}</strong></p>
         </section>
 
         <section class="section">
-            <h2>🧠 Game-Based Learning: La Ciencia Detrás del Éxito</h2>
+            <h2>{{ __('messages.section_2_title') }}</h2>
             <div class="benefits-list">
                 <div class="benefit-item">
-                    <h4>🚀 Dinamiza la Educación</h4>
-                    <p>Transforma el aprendizaje en experiencias divertidas y emocionantes, permitiendo que los estudiantes asimilen contenidos de forma natural.</p>
+                    <h4>{{ __('messages.benefit_1_title') }}</h4>
+                    <p>{{ __('messages.benefit_1_description') }}</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>⭐ Incrementa la Motivación</h4>
-                    <p>Los estudiantes se convierten en protagonistas, recibiendo recompensas por su esfuerzo: medallas, logros y progreso visible.</p>
+                    <h4>{{ __('messages.benefit_2_title') }}</h4>
+                    <p>{{ __('messages.benefit_2_description') }}</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>🎮 Facilita la Práctica</h4>
-                    <p>Permite aplicar conocimientos en entornos seguros, sin riesgos reales, maximizando el aprendizaje experiencial.</p>
+                    <h4>{{ __('messages.benefit_3_title') }}</h4>
+                    <p>{{ __('messages.benefit_3_description') }}</p>
                 </div>
             </div>
         </section>
 
         <div class="highlight">
-            <h3>💡 Respaldo Científico</h3>
-            <p><strong>Universidad de Oxford (2014):</strong> Los niños que juegan videojuegos con moderación (menos de 1 hora diaria) muestran mayor estabilidad emocional y mejores habilidades sociales que aquellos que no juegan.</p>
+            <h3>{{ __('messages.highlight_1_title') }}</h3>
+            <p><strong>{{ __('messages.oxford_study_text') }}</strong></p>
         </div>
 
         <section class="section">
-            <h2>🎓 Beneficios Comprobados de Nuestra App</h2>
+            <h2>{{ __('messages.section_3_title') }}</h2>
             <div class="benefits-list">
                 <div class="benefit-item">
-                    <h4>🧩 Desarrollo Cognitivo</h4>
-                    <p><strong>Atención, memoria y creatividad:</strong> Mejora significativa en capacidades cognitivas fundamentales para el aprendizaje académico.</p>
+                    <h4>{{ __('messages.benefit_4_title') }}</h4>
+                    <p><strong>{{ __('messages.benefit_4_description') }}</strong></p>
                 </div>
                 <div class="benefit-item">
-                    <h4>🌍 Aprendizaje Multidisciplinario</h4>
-                    <p><strong>Historia, geografía, matemáticas:</strong> Contenido educativo integrado de forma natural en experiencias de juego envolventes.</p>
+                    <h4>{{ __('messages.benefit_5_title') }}</h4>
+                    <p><strong>{{ __('messages.benefit_5_description') }}</strong></p>
                 </div>
                 <div class="benefit-item">
-                    <h4>🤝 Habilidades Sociales</h4>
-                    <p><strong>Trabajo en equipo y idiomas:</strong> Desarrollo de competencias interpersonales y comunicativas esenciales para el siglo XXI.</p>
+                    <h4>{{ __('messages.benefit_6_title') }}</h4>
+                    <p><strong>{{ __('messages.benefit_6_description') }}</strong></p>
                 </div>
                 <div class="benefit-item">
-                    <h4>🎯 Orientación Vocacional</h4>
-                    <p><strong>Despertar vocaciones tempranas:</strong> Como Lara Croft inspira arqueólogos, nuestros juegos revelan pasiones profesionales.</p>
+                    <h4>{{ __('messages.benefit_7_title') }}</h4>
+                    <p><strong>{{ __('messages.benefit_7_description') }}</strong></p>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2>📱 Nuestra Propuesta de Valor</h2>
+            <h2>{{ __('messages.section_4_title') }}</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">100%</span>
-                    <p>Móvil y Accesible</p>
+                    <p>{{ __('messages.mobile_accessible_percentage') }}</p>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">0</span>
-                    <p>Clases Aburridas</p>
+                    <p>{{ __('messages.boring_classes') }}</p>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">∞</span>
-                    <p>Potencial de Aprendizaje</p>
+                    <p>{{ __('messages.learning_potential') }}</p>
                 </div>
             </div>
-            <p><strong>Combinamos la adicción positiva de los videojuegos con contenido educativo de calidad,</strong> creando una experiencia que los estudiantes aman y los padres aprueban.</p>
+            <p><strong>{{ __('messages.value_prop_text') }}</strong></p>
             
             <div class="highlight" style="margin-top: 30px;">
-                <h3>💼 Ventajas Técnicas y Comerciales</h3>
+                <h3>{{ __('messages.technical_commercial_advantages_title') }}</h3>
                 <div class="benefits-list" style="text-align: left;">
                     <div class="benefit-item">
-                        <h4>🏪 Distribución Comercial</h4>
-                        <p><strong>Google Play & App Store:</strong> Gracias a la licencia de NativePHP, podemos distribuir comercialmente en ambas tiendas principales, alcanzando el 99% del mercado móvil global.</p>
+                        <h4>{{ __('messages.commercial_distribution_title') }}</h4>
+                        <p><strong>{{ __('messages.commercial_distribution_description') }}</strong></p>
                     </div>
                     <div class="benefit-item">
-                        <h4>💰 Infraestructura Económica</h4>
-                        <p><strong>Raspberry Pi 5:</strong> Almacenamiento de datos en hardware propio, reduciendo costos de servidores cloud en un 80% comparado con soluciones tradicionales.</p>
+                        <h4>{{ __('messages.economic_infrastructure_title') }}</h4>
+                        <p><strong>{{ __('messages.economic_infrastructure_description') }}</strong></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <div class="highlight">
-            <h3>🏆 El Momento es AHORA</h3>
-            <p>La industria de videojuegos crece exponencialmente. La educación necesita innovación urgente. <strong>Nuestra app está en la intersección perfecta de estas dos mega-tendencias.</strong></p>
+            <h3>{{ __('messages.highlight_2_title') }}</h3>
+            <p><strong>{{ __('messages.now_text') }}</strong></p>
         </div>
 
     </div>
