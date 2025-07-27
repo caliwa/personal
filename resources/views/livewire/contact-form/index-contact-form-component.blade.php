@@ -93,12 +93,12 @@
         </p>
         <p class="text-lg mb-8 animate-fade-in">
             {{ __('messages.contact_me') }} 
-            <a href="https://wa.me/+573234542749?text={{ urlencode(__('messages.whatsapp_message_template')) }}" class="underline hover:text-blue-600">
-                +57 323 454 2749
+            <a href="https://wa.me/+573188977407?text={{ urlencode(__('messages.whatsapp_message_template')) }}" class="underline hover:text-blue-600">
+                +57 318 897 7407
             </a> 
         </p>
        <a 
-            href="https://wa.me/+573234542749?text={{ urlencode(__('messages.whatsapp_message_template')) }}" 
+            href="https://wa.me/+573188977407?text={{ urlencode(__('messages.whatsapp_message_template')) }}" 
             class="inline-block px-8 py-4 bg-[#25D366] text-white border-4 border-black font-bold text-lg transform transition hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] animate-slide-in"
         >
             {{ __('messages.contact_whatsapp_button') }}
