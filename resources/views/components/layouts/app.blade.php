@@ -145,6 +145,7 @@
       },
       "services": {!! json_encode(__('messages.services_list')) !!}, {{-- Use json_encode for arrays --}}
       "sameAs": [
+        "https://www.youtube.com/@Carloxleyend97",
         "https://www.tiktok.com/@rubicon.tech",
         "https://instagram.com/rubicon.bio"
       ]
@@ -291,6 +292,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <p>© {{ date('Y') }} Rubicon. {{ __('messages.footer_copyright') }}</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="https://www.youtube.com/@Carloxleyend97" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="{{ __('messages.footer_youtube') }}">Youtube</a>
                     <a href="https://www.tiktok.com/@rubicon.tech" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="{{ __('messages.footer_tiktok') }}">Tiktok</a>
                     <a href="https://instagram.com/rubicon.bio" target="_blank" class="hover:underline transition-all duration-300 hover:text-[#FF5252]" aria-label="{{ __('messages.footer_instagram') }}">Instagram</a>
                 </div>

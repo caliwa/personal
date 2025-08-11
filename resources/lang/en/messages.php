@@ -152,6 +152,7 @@ return [
     'footer_location' => '📍 Medellín, Antioquia - Colombia',
     'footer_tagline' => 'Business Digital Transformation',
     'footer_copyright' => 'All rights reserved. Medellín, Colombia',
+    'footer_youtube' => 'Youtube profile',
     'footer_tiktok' => 'Tiktok profile',
     'footer_instagram' => 'Instagram profile',
 

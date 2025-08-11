@@ -144,6 +144,7 @@ return [
     'footer_location' => '📍 Medellín, Antioquia - Colombia',
     'footer_tagline' => 'Transformación Digital Empresarial',
     'footer_copyright' => 'Todos los derechos reservados. Medellín, Colombia',
+    'footer_youtube' => 'Perfil de Youtube',
     'footer_tiktok' => 'Perfil de Tiktok',
     'footer_instagram' => 'Perfil de Instagram',
 
