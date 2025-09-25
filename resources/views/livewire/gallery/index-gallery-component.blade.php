@@ -4,6 +4,7 @@
             'id' => 1,
             'title' => __('messages.project_1_title'),
             'category' => __('messages.project_categories.arquitectura'), // Translated category
+            'duration_time' => __('messages.project_1_duration'),
             'raw_category' => 'arquitectura', // Keep raw category for styling
             'description' => __('messages.project_1_description'),
             'challenge' => __('messages.project_1_challenge'),
@@ -19,8 +20,28 @@
         ],
         [
             'id' => 2,
+            'title' => __('messages.project_7_title'),
+            'category' => __('messages.project_categories.digital'),
+            'duration_time' => __('messages.project_7_duration'),
+            'raw_category' => 'digital',
+            'description' => __('messages.project_7_description'),
+            'challenge' => __('messages.project_7_challenge'),
+            'image' => '/img/archivosrubicon/equisol1.png',
+            'gallery' => [
+                '/img/archivosrubicon/equisol1.png',
+                '/img/archivosrubicon/equisol2.png',
+                '/img/archivosrubicon/equisol3.png',
+                '/img/archivosrubicon/equisol4.png',
+                '/img/archivosrubicon/equisol5.png',
+            ],
+            'client' => 'Equisol S.A.S',
+            'year' => '2025'
+        ],
+        [
+            'id' => 3,
             'title' => __('messages.project_2_title'),
             'category' => __('messages.project_categories.digital'),
+            'duration_time' => __('messages.project_2_duration'),
             'raw_category' => 'digital',
             'description' => __('messages.project_2_description'),
             'challenge' => __('messages.project_2_challenge'),
@@ -34,9 +55,10 @@
             'year' => '2024'
         ],
         [
-            'id' => 3,
+            'id' => 4,
             'title' => __('messages.project_3_title'),
             'category' => __('messages.project_categories.branding'),
+            'duration_time' => __('messages.project_3_duration'),
             'raw_category' => 'branding',
             'description' => __('messages.project_3_description'),
             'challenge' => __('messages.project_3_challenge'),
@@ -49,9 +71,10 @@
             'year' => '2023'
         ],
         [
-            'id' => 4,
+            'id' => 5,
             'title' => __('messages.project_4_title'),
             'category' => __('messages.project_categories.editorial'),
+            'duration_time' => __('messages.project_4_duration'),
             'raw_category' => 'editorial',
             'description' => __('messages.project_4_description'),
             'challenge' => __('messages.project_4_challenge'),
@@ -63,9 +86,10 @@
             'year' => '2024'
         ],
         [
-            'id' => 5,
+            'id' => 6,
             'title' => __('messages.project_5_title'),
             'category' => __('messages.project_categories.digital'),
+            'duration_time' => __('messages.project_5_duration'),
             'raw_category' => 'digital',
             'description' => __('messages.project_5_description'),
             'challenge' => __('messages.project_5_challenge'),
@@ -79,9 +103,10 @@
             'year' => '2025'
         ],
         [
-            'id' => 6,
+            'id' => 7,
             'title' => __('messages.project_6_title'),
             'category' => __('messages.project_categories.digital'),
+            'duration_time' => __('messages.project_6_duration'),
             'raw_category' => 'digital',
             'description' => __('messages.project_6_description'),
             'challenge' => __('messages.project_6_challenge'),
@@ -197,13 +222,18 @@ x-on:scroll.window="!showModal || closeModal()"
                 </div>
             </div>
             <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-end mt-8">
-                <div class="w-full md:w-2/3 animate-fade-in" style="animation-delay: 0.5s;">
-                    <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">
+                <div class="w-full md:w-2/3 animate-fade-in mb-6 md:mb-8" style="animation-delay: 0.5s;">
+                    <p class="text-lg sm:text-xl md:text-2xl ">
                         {{ __('messages.hero_description_1') }}<br>
+                    </p>
+                    <p class="text-lg sm:text-xl md:text-2xl ">
                         <span class="italic text-gray-500">{{ __('messages.hero_description_2') }}</span>
                     </p>
+                    <p class="text-sm text-center sm:text-xl md:text-2xl pt-5">
+                        <span class="italic text-gray-300">{{ __('messages.by') }} Carlos A. González A.</span>
+                    </p>
                 </div>
-<div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
+                <div class="relative w-full md:w-1/3 h-24 sm:h-28 md:h-32 bg-[#ff0000] border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-float overflow-hidden">
                     <div class="absolute inset-0 flex items-center justify-center p-4">
                         <div class="relative w-full h-full max-w-[180px]">
                             <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -372,7 +402,7 @@ x-on:scroll.window="!showModal || closeModal()"
                             </div>
                             <div>
                                 <div class="font-bold uppercase text-sm tracking-widest">{{ __('messages.duration') }}</div>
-                                <div class="text-lg">{{ __('messages.duration_time') }}</div>
+                                <div class="text-lg" x-text="currentProject?.duration_time"></div>
                             </div>
                         </div>
                     </div>

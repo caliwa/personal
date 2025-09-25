@@ -5,6 +5,7 @@ return [
     'hero_title_2' => 'PORTAFOLIO',
     'hero_description_1' => 'Una manifestación continua de ingeniería creativa. Cada proyecto establece nuevos paradigmas en la intersección digital-física.',
     'hero_description_2' => '(¿Puedes creer que esta pagina está en una Raspberry Pi 5?)',
+    'by' => 'Por',
     'see_project' => 'VER PROYECTO',
     'project_vision' => 'Visión del Proyecto',
     'challenge' => 'Reto',
@@ -37,34 +38,45 @@ return [
 
     // Proyecto 1: Cotizador Doblamos
     'project_1_title' => 'Cotizador Doblamos',
+    'project_1_duration' => '1 año 9 meses',
     'project_1_description' => 'Cotizador para figuras de acero estándar y servicios.',
     'project_1_challenge' => 'Desarrollar una plataforma intuitiva que permita a los usuarios cotizar estructuras de acero de manera rápida y precisa.',
 
     // Proyecto 2: GTT - Tecnoal
     'project_2_title' => 'GTT - Tecnoal',
+    'project_2_duration' => '4 meses',
     'project_2_description' => 'Plataforma de gestión de usuarios.',
     'project_2_challenge' => 'Crear una interfaz de usuario intuitiva y un sistema de backend robusto para gestionar usuarios y sus datos de manera eficiente.',
 
     // Proyecto 3: Ideas en línea Chatbot
     'project_3_title' => 'Ideas en línea Chatbot',
+    'project_3_duration' => '3 meses',
     'project_3_description' => 'Identidad visual para diversos nichos de mercado.',
     'project_3_challenge' => 'Automatizar la atención al cliente mediante un chatbot que pueda responder preguntas frecuentes y guiar a los usuarios en sus compras.',
 
     // Proyecto 4: PDF Ahorro físico de papel
     'project_4_title' => 'PDF Ahorro físico de papel',
+    'project_4_duration' => '2 meses',
     'project_4_description' => 'Creación de aplicación para bocetado y edición de documentos PDF.',
     'project_4_challenge' => 'Desarrollar una aplicación que permita a los usuarios editar y anotar documentos PDF de manera eficiente, reduciendo el uso de papel.',
 
     // Proyecto 5: Videojuego multiplataforma educativo
     'project_5_title' => 'Videojuego multiplataforma educativo',
+    'project_5_duration' => '10 meses',
     'project_5_description' => 'Juego de aventuras para aprender sobre emprendimiento y finanzas.',
     'project_5_challenge' => 'Diseñar y desarrollar un videojuego interactivo que enseñe conceptos de emprendimiento y finanzas a través de una narrativa atractiva.',
 
     // Proyecto 6: Cervecerías y cócteles
     'project_6_title' => 'Cervecerías y cócteles',
+    'project_6_duration' => '5 meses',
     'project_6_description' => 'Sistema de analytics para cervecerías y bares.',
     'project_6_challenge' => 'Desarrollar un sistema de análisis de datos que permita a los propietarios de cervecerías y bares entender mejor el comportamiento de sus clientes y optimizar sus operaciones.',
     //
+    'project_7_title' => 'Cotizador F.I Equisol',
+    'project_7_duration' => '5 meses',
+    'project_7_description' => 'Soluciones inteligentes y ágiles para el crecimiento continuo de nuestros aliados, con acompañamiento personalizado antes, durante y después de cada proceso.',
+    'project_7_challenge' => 'Desarrollar un cotizador a medida para el cálculo de F.I., contemplando variaciones de F.I., uso de expresiones de lenguaje y trazabilidad completa en el proceso.',
+
 
     'pitch_title' => 'Pitch: Aplicación Móvil Educativa',
     'app_name' => 'EduGamer App - Rubicon',

@@ -21,10 +21,3 @@ Route::middleware([SetLocale::class])->group(function () {
     Route::get('/demo', MediatorTestExamplesComponent::class)->name('testexamples');
     Route::get('/pitch', MediatorPitchComponent::class)->name('pitch');
 });
-
-
-Route::get('/cerrajeria', CerrajeriaLoginComponent::class)->name('cerrajeria.login');
-
-Route::prefix('cerrajeria')->group(function () {
-    Route::get('/dashboard', DashboardMediatorComponent::class)->name('dashboard-cerrajeria');
-});

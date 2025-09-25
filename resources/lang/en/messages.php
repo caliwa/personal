@@ -5,6 +5,7 @@ return [
     'hero_title_2' => 'PORTFOLIO',
     'hero_description_1' => 'A continuous manifestation of creative engineering. Each project sets new paradigms at the digital-physical intersection.',
     'hero_description_2' => '(Can you believe this page is on a Raspberry Pi 5?)',
+    'by' => 'By',
     'see_project' => 'VIEW PROJECT',
     'project_vision' => 'Project Vision',
     'challenge' => 'Challenge',
@@ -36,33 +37,46 @@ return [
 
     // Project 1: Cotizador Doblamos
     'project_1_title' => 'Doblamos Quoter',
+    'project_1_duration' => '1 year 9 months',
     'project_1_description' => 'Quoter for standard steel figures and services.',
     'project_1_challenge' => 'Develop an intuitive platform that allows users to quickly and accurately quote steel structures.',
 
     // Project 2: GTT - Tecnoal
     'project_2_title' => 'GTT - Tecnoal',
+    'project_2_duration' => '4 months',
     'project_2_description' => 'User management platform.',
     'project_2_challenge' => 'Create an intuitive user interface and a robust backend system to efficiently manage users and their data.',
 
     // Project 3: Ideas en línea Chatbot
     'project_3_title' => 'Ideas Online Chatbot',
+    'project_3_duration' => '6 months',
     'project_3_description' => 'Visual identity for various market niches.',
     'project_3_challenge' => 'Automate customer service with a chatbot that can answer frequently asked questions and guide users through their purchases.',
 
     // Project 4: PDF Ahorro físico de papel
     'project_4_title' => 'PDF Paper Saving',
+    'project_4_duration' => '2 months',
     'project_4_description' => 'Creation of an application for sketching and editing PDF documents.',
     'project_4_challenge' => 'Develop an application that allows users to efficiently edit and annotate PDF documents, reducing paper usage.',
 
     // Project 5: Videojuego multiplataforma educativo
     'project_5_title' => 'Educational Multiplatform Video Game',
+    'project_5_duration' => '10 months',
     'project_5_description' => 'Adventure game to learn about entrepreneurship and finance.',
     'project_5_challenge' => 'Design and develop an interactive video game that teaches entrepreneurship and finance concepts through an engaging narrative.',
 
     // Project 6: Cervecerías y cócteles
     'project_6_title' => 'Breweries and Cocktails',
+    'project_6_duration' => '5 months',
     'project_6_description' => 'Analytics system for breweries and bars.',
     'project_6_challenge' => 'Develop a data analysis system that allows brewery and bar owners to better understand customer behavior and optimize their operations.',
+
+    // Project 7: Equisol S.A.S
+    'project_7_title' => 'F.I Quoter Equisol',
+    'project_7_duration' => '5 months',
+    'project_7_description' => 'Smart and agile solutions for the continuous growth of our partners, with personalized support before, during, and after every process.',
+    'project_7_challenge' => 'Develop a custom quoting tool for F.I. calculation, including F.I. variations, the use of expression language, and full process traceability.',
+
 
     //
 
